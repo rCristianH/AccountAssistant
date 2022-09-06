@@ -1,0 +1,120 @@
+body {
+  background-color: #1f2128;
+  background-size: 1vh;
+  color: white;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  width: 45%;
+  border: 1px solid transparent;
+  padding: 10px;
+  height: 45px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #242731;
+  margin-left: -40px;
+}
+article {
+  background-color: #242731;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+article section h2 {
+  margin-top: 0px;
+}
+article section hr {
+  color: #6c5dd3;
+  border: 1px dotted;
+}
+article section ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: -40px;
+  gap: 15px;
+}
+article section ul li {
+  width: 200px;
+  border: 1px solid inset;
+  padding: 10px;
+  height: min-content;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #2f323b;
+}
+article section ul li button {
+  border: 1px solid transparent;
+  background-color: #3e4149;
+  margin: 5px 10px;
+  color: #5060b5;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 12px;
+}
+article section ul li input {
+  height: 30px;
+  width: 160px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid white;
+  margin: 5px;
+}
+article section ul li span {
+  vertical-align: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.floating {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 200px;
+  height: 75px;
+  border-radius: 20px;
+  background-color: #2f323b92;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.floating span {
+  margin: 0px 7px;
+  font-size: 24px;
+  padding: 5px;
+}
+.floating button {
+  border-radius: 12px;
+  border: transparent;
+  background-color: #3f8cff;
+  color: white;
+  height: 40px;
+  width: 80px;
+  font-weight: 700;
+}
+@media (max-width: 490px) {
+}
+
+footer {
+  text-align: center;
+  color: #595959;
+  font-size: 14px;
+}
