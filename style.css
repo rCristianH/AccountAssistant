@@ -82,6 +82,13 @@ nav ul a:hover {
   margin-top: 0;
   margin-bottom: 0;
 }
+.number-input {
+  width: 100px;
+  height: 30px;
+  background: var(--text-input-field);
+  border-radius: 14px;
+  border: 1px solid var(--text-input-field);
+}
 footer {
   width: 100%;
 }

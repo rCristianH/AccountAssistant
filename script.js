@@ -75,6 +75,11 @@ function Sumchocolate() {
 function Sumhuevos() {
   elementMod.innerHTML = eggs + toNumber();
 }
+function otroPrecio() {
+    let value = Number(document.getElementsByClassName("number-input")[0].value)
+    elementMod.innerHTML = value + toNumber();
+}
+
 //operations -
 
 function Resdelgada() {
