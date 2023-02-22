@@ -9,6 +9,7 @@
   --md: 16px;
   --lg: 18px;
 }
+
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -40,6 +41,20 @@ nav ul a:hover {
   color: var(--hospital-green);
   border: 1px solid var(--hospital-green);
 }
+/* Ocultar */
+#unidades {
+  display: grid;
+}
+#paquetes {
+  display: none;
+}
+#bebidas {
+  display: none;
+}
+#huevos {
+  display: none;
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
@@ -88,6 +103,22 @@ nav ul a:hover {
   background: var(--text-input-field);
   border-radius: 14px;
   border: 1px solid var(--text-input-field);
+}
+aside {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  background-color: var(--very-light-pink);
+  top: calc(50% - 260px);
+  right: calc(50% - 160px);
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: var(--dark);
+  padding: 10px;
 }
 footer {
   width: 100%;

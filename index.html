@@ -17,156 +17,177 @@
         <img src="https://i.imgur.com/m1uVWHe.png" alt="">
 
         <ul>
-            <li><a>Arepas</a></li>
-            <li><a>Paquetes</a></li>
-            <li><a>Bebidas</a></li>
-            <li><a>Huevos</a></li>
+            <li><a onclick="displayArepas()">Arepas</a></li>
+            <li><a onclick="displayPaquetes()">Paquetes</a></li>
+            <li><a onclick="displayBebidas()">Bebidas</a></li>
+            <li><a onclick="displayHuevos()">Huevos</a></li>
         </ul>
     </nav>
 
     <section class="main-container">
-        <div class="cards-container">
-            <div class="product-card">
-                <button onclick="Resdelgada()">-</button>
-                <div class="product-info">
-                    <p>Delgada</p>
-                    <p>$ 1400</p>
-                </div>
-                <button onclick="Sumdelgada()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="ResdelgadaQ()">-</button>
-                <div class="product-info">
-                    <p>Delgada Q</p>
-                    <p>$ 3500</p>
-                </div>
-                <button onclick="SumdelgadaQ()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="ResdelgadaH()">-</button>
-                <div class="product-info">
-                    <p>Delgada H</p>
-                    <p>$ 3800</p>
-                </div>
-                <button onclick="SumdelgadaH()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="Resgratinada()">-</button>
-                <div class="product-info">
-                    <p>Gratinada</p>
-                    <p>$ 4500</p>
-                </div>
-                <button onclick="Sumgratinada()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="Resgorda()">-</button>
-                <div class="product-info">
-                    <p>Gorda</p>
-                    <p>$ 1100</p>
-                </div>
-                <button onclick="Sumgorda()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="ResgordaQ()">-</button>
-                <div class="product-info">
-                    <p>Gorda Q</p>
-                    <p>$ 2700</p>
-                </div>
-                <button onclick="SumgordaQ()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="RessinSal()">-</button>
-                <div class="product-info">
-                    <p>Sin Sal</p>
-                    <p>$ 600</p>
-                </div>
-                <button onclick="SumsinSal()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="RessinSalQ()">-</button>
-                <div class="product-info">
-                    <p>Sin Sal Q</p>
-                    <p>$ 2200</p>
-                </div>
-                <button onclick="SumsinSalQ()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="ResdelgadaP()">-</button>
-                <div class="product-info">
-                    <p>Delgada</p>
-                    <p>$ 13000</p>
-                </div>
-                <button onclick="SumdelgadaP()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="ResgordaP()">-</button>
-                <div class="product-info">
-                    <p>Gorda</p>
-                    <p>$ 10000</p>
-                </div>
-                <button onclick="SumgordaP()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="RessinSalP()">-</button>
-                <div class="product-info">
-                    <p>Sin Sal</p>
-                    <p>$ 5500</p>
-                </div>
-                <button onclick="SumsinSalP()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="Rescafe()">-</button>
-                <div class="product-info">
-                    <p>Cafe</p>
-                    <p>$ 1000</p>
-                </div>
-                <button onclick="Sumcafe()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="RescafeLeche()">-</button>
-                <div class="product-info">
-                    <p>Cafe Leche</p>
-                    <p>$ 1300</p>
-                </div>
-                <button onclick="SumcafeLeche()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="Reschocolate()">-</button>
-                <div class="product-info">
-                    <p>Chocolate</p>
-                    <p>$ 2500</p>
-                </div>
-                <button onclick="Sumchocolate()">+</button>
-            </div>
-            <div class="product-card">
-                <button onclick="Reshuevos()">-</button>
-                <div class="product-info">
-                    <p>Huevos</p>
-                    <p>$ 2500</p>
-                </div>
-                <button onclick="Sumhuevos()">+</button>
-            </div>
-            <div class="product-card">
-                <div class="product-info">
-                    <p>Otro Precio</p>
-                    <div>
-                        <input type="number" class="number-input">
-                        <button onclick="otroPrecio()">></button>
-                        <div />
+        <div class="">
 
+            <div class="cards-container" id="unidades">
+
+                <div class="product-card">
+                    <button onclick="Resdelgada()">-</button>
+                    <div class="product-info">
+                        <p>Delgada</p>
+                        <p>$ 1400</p>
+                    </div>
+                    <button onclick="Sumdelgada()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="ResdelgadaQ()">-</button>
+                    <div class="product-info">
+                        <p>Delgada Q</p>
+                        <p>$ 3500</p>
+                    </div>
+                    <button onclick="SumdelgadaQ()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="ResdelgadaH()">-</button>
+                    <div class="product-info">
+                        <p>Delgada H</p>
+                        <p>$ 3800</p>
+                    </div>
+                    <button onclick="SumdelgadaH()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="Resgratinada()">-</button>
+                    <div class="product-info">
+                        <p>Gratinada</p>
+                        <p>$ 4500</p>
+                    </div>
+                    <button onclick="Sumgratinada()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="Resgorda()">-</button>
+                    <div class="product-info">
+                        <p>Gorda</p>
+                        <p>$ 1100</p>
+                    </div>
+                    <button onclick="Sumgorda()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="ResgordaQ()">-</button>
+                    <div class="product-info">
+                        <p>Gorda Q</p>
+                        <p>$ 2700</p>
+                    </div>
+                    <button onclick="SumgordaQ()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="RessinSal()">-</button>
+                    <div class="product-info">
+                        <p>Sin Sal</p>
+                        <p>$ 600</p>
+                    </div>
+                    <button onclick="SumsinSal()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="RessinSalQ()">-</button>
+                    <div class="product-info">
+                        <p>Sin Sal Q</p>
+                        <p>$ 2200</p>
+                    </div>
+                    <button onclick="SumsinSalQ()">+</button>
+                </div>
+
+            </div>
+
+            <div class="cards-container" id="paquetes">
+                <div class="product-card">
+                    <button onclick="ResdelgadaP()">-</button>
+                    <div class="product-info">
+                        <p>Delgada</p>
+                        <p>$ 13000</p>
+                    </div>
+                    <button onclick="SumdelgadaP()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="ResgordaP()">-</button>
+                    <div class="product-info">
+                        <p>Gorda</p>
+                        <p>$ 10000</p>
+                    </div>
+                    <button onclick="SumgordaP()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="RessinSalP()">-</button>
+                    <div class="product-info">
+                        <p>Sin Sal</p>
+                        <p>$ 5500</p>
+                    </div>
+                    <button onclick="SumsinSalP()">+</button>
+                </div>
+            </div>
+
+            <div class="cards-container" id="bebidas">
+                <div class="product-card">
+                    <button onclick="Rescafe()">-</button>
+                    <div class="product-info">
+                        <p>Cafe</p>
+                        <p>$ 1000</p>
+                    </div>
+                    <button onclick="Sumcafe()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="RescafeLeche()">-</button>
+                    <div class="product-info">
+                        <p>Cafe Leche</p>
+                        <p>$ 1300</p>
+                    </div>
+                    <button onclick="SumcafeLeche()">+</button>
+                </div>
+                <div class="product-card">
+                    <button onclick="Reschocolate()">-</button>
+                    <div class="product-info">
+                        <p>Chocolate</p>
+                        <p>$ 2500</p>
+                    </div>
+                    <button onclick="Sumchocolate()">+</button>
+                </div>
+            </div>
+            <div class="cards-container" id="huevos">
+                <div class="product-card">
+                    <button onclick="Reshuevos()">-</button>
+                    <div class="product-info">
+                        <p>Huevos</p>
+                        <p>$ 2500</p>
+                    </div>
+                    <button onclick="Sumhuevos()">+</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <p>Otro Precio</p>
+                        <div>
+                            <input type="number" class="number-input">
+                            <button onclick="otroPrecio()">></button>
+                            <div />
+
+                        </div>
                     </div>
                 </div>
             </div>
-    </section>
 
+    </section>
+    <aside id="factura" id="factura2">
+
+        
+        
+    </aside>
     <footer>
         <div class="result">
             <p>$ <span> 0</span> </p>
-            <button>
+            <button onclick="botonPagar()">
                 Pagar
             </button>
         </div>
     </footer>
+
+
+
     <script src="./script.js"></script>
 </body>
 

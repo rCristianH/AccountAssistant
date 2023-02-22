@@ -1,0 +1,23 @@
+<div class="product-info">
+                    <p>Otro Precio</p>
+                    <div>
+                        <input type="number" class="number-input">
+                        <button onclick="otroPrecio()">></button>
+                        <div />
+
+                    </div>
+                    <script>
+                        function otroPrecio() {
+                            let value = document.getElementsByClassName("number-input")[0].value
+                            console.log(value)
+                        }
+
+                    </script>
+
+                    .number-input{
+  width: 100px;
+  height: 30px;
+  background: var(--text-input-field);
+  border-radius: 14px;
+  border: 1px solid var(--text-input-field);
+}
