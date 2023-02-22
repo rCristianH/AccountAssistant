@@ -1,12 +1,12 @@
 //unidad
 const delgada = 1400;
 const delgadaQ = 3500;
-const delgadaH = 3800;
-const gratinada = 4500;
+const delgadaH = 3900;
+const gratinada = 4800;
 const gorda = 1100;
 const gordaQ = 2700;
 const sinSal = 600;
-const sinSalQ = 2200;
+const sinSalQ = 2300;
 //paquete
 const delgadaP = 13000;
 const gordaP = 10000;

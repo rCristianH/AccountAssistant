@@ -32,7 +32,7 @@ nav ul {
 }
 nav ul a {
   text-decoration: none;
-  color: var(--very-light-pink);
+  color: var(--dark);
   border: 1px solid var(--white);
   padding: 8px;
   border-radius: 8px;
@@ -79,6 +79,10 @@ nav ul a:hover {
   color: var(--white);
   font-size: var(--md);
   font-weight: bold;
+}
+
+.product-card button:active {
+  background-color: var(--dark);
 }
 .product-info {
   display: flex;
@@ -150,4 +154,16 @@ footer {
   color: var(--white);
   font-size: var(--md);
   font-weight: bold;
+}
+@media (max-width: 375px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, 160px);
+  }
+  .product-card {
+    width: 160px;
+  }
+  .product-card button {
+    width: 40px;
+    height: 40px;
+  }
 }
