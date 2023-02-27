@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    
+
     <title>El Arepero Mayor</title>
 </head>
 
@@ -176,8 +176,8 @@
     </section>
     <aside id="factura" id="factura2">
 
-        
-        
+
+
     </aside>
     <footer>
         <div class="result">
@@ -191,6 +191,13 @@
 
 
     <script src="./script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 
 </html>

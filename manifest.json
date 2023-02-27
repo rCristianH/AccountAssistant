@@ -1,0 +1,22 @@
+{
+  "short_name": "El Arepero Mayor",
+  "name": "El Arepero Mayor",
+  "icons": [
+    {
+      "src": "./assets/icon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html?source=pwa",
+  "id": "/index.html?source=pwa",
+  "background_color": "#0099fe",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0099fe"
+}
