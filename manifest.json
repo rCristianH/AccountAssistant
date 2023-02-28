@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "./AccountAssistant/index.html?source=pwa",
+  "start_url": "./index.html",
   "background_color": "#fff",
   "display": "standalone",
   "scope": "/",
