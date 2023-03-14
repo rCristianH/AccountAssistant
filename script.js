@@ -103,7 +103,7 @@ function otroPrecio() {
 }
 
 //operations -
-
+/* 
 function Resdelgada() {
   elementMod.innerHTML = toNumber() - delgada;
 }
@@ -155,7 +155,7 @@ function Reshuevos() {
 function Reshuevosunidad() {
   elementMod.innerHTML = toNumber() - egg;
 }
-
+ */
 function botonPagar() {
   const out = document.getElementById("factura");
   out.style.display = "flex";
