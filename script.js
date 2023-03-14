@@ -17,6 +17,7 @@ const cafeLeche = 1300;
 const chocolate = 2500;
 //huevos
 const eggs = 2500;
+const egg = 1300;
 
 //cuenta final
 const elementMod = document.querySelector(".result > p > span");
@@ -91,6 +92,10 @@ function Sumhuevos() {
   elementMod.innerHTML = eggs + toNumber();
   factura += `<div>${eggs} Huevos</div>`;
 }
+function Sumhuevosunidad() {
+  elementMod.innerHTML = egg + toNumber();
+  factura += `<div>${egg} Huevo</div>`;
+}
 function otroPrecio() {
   let value = Number(document.getElementsByClassName("number-input")[0].value);
   elementMod.innerHTML = value + toNumber();
@@ -146,6 +151,9 @@ function Reschocolate() {
 
 function Reshuevos() {
   elementMod.innerHTML = toNumber() - eggs;
+}
+function Reshuevosunidad() {
+  elementMod.innerHTML = toNumber() - egg;
 }
 
 function botonPagar() {
