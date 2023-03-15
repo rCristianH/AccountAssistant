@@ -102,60 +102,6 @@ function otroPrecio() {
   factura += `<div>${value} Otro valor</div>`;
 }
 
-//operations -
-/* 
-function Resdelgada() {
-  elementMod.innerHTML = toNumber() - delgada;
-}
-function ResdelgadaQ() {
-  elementMod.innerHTML = toNumber() - delgadaQ;
-}
-function ResdelgadaH() {
-  elementMod.innerHTML = toNumber() - delgadaH;
-}
-function Resgratinada() {
-  elementMod.innerHTML = toNumber() - gratinada;
-}
-function Resgorda() {
-  elementMod.innerHTML = toNumber() - gorda;
-}
-function ResgordaQ() {
-  elementMod.innerHTML = toNumber() - gordaQ;
-}
-function RessinSal() {
-  elementMod.innerHTML = toNumber() - sinSal;
-}
-function RessinSalQ() {
-  elementMod.innerHTML = toNumber() - sinSalQ;
-}
-
-function ResdelgadaP() {
-  elementMod.innerHTML = toNumber() - delgadaP;
-}
-function ResgordaP() {
-  elementMod.innerHTML = toNumber() - gordaP;
-}
-function RessinSalP() {
-  elementMod.innerHTML = toNumber() - sinSalP;
-}
-
-function Rescafe() {
-  elementMod.innerHTML = toNumber() - cafe;
-}
-function RescafeLeche() {
-  elementMod.innerHTML = toNumber() - cafeLeche;
-}
-function Reschocolate() {
-  elementMod.innerHTML = toNumber() - chocolate;
-}
-
-function Reshuevos() {
-  elementMod.innerHTML = toNumber() - eggs;
-}
-function Reshuevosunidad() {
-  elementMod.innerHTML = toNumber() - egg;
-}
- */
 function botonPagar() {
   const miElemento = document.querySelector("#factura");
   const propiedadesCSS = window.getComputedStyle(miElemento);
