@@ -74,15 +74,16 @@ nav ul a:hover {
   width: 50px;
   height: 50px;
   border-radius: 20px;
-  border: 1px solid var(--hospital-green);
-  background-color: var(--hospital-green);
+  border: 1px solid var(--dark);
+  background-color: var(--dark);
   color: var(--white);
   font-size: var(--md);
   font-weight: bold;
 }
 
 .product-card button:active {
-  background-color: var(--dark);
+  background-color: var(--hospital-green);
+  color: var(--dark);
 }
 .product-info {
   display: flex;
@@ -107,6 +108,7 @@ nav ul a:hover {
   background: var(--text-input-field);
   border-radius: 14px;
   border: 1px solid var(--text-input-field);
+  text-align: center;
 }
 aside {
   display: none;
@@ -146,16 +148,21 @@ footer {
   margin-bottom: 0;
 }
 .result button {
-  width: 70px;
+  width: 80px;
   height: 50px;
   border-radius: 20px;
-  border: 1px solid var(--hospital-green);
-  background-color: var(--hospital-green);
+  border: 1px solid var(--dark);
+  background-color: var(--dark);
   color: var(--white);
   font-size: var(--md);
   font-weight: bold;
 }
-@media (max-width: 375px) {
+.result button:active {
+  border: 1px solid var(--dark);
+  background-color: var(--hospital-green);
+  color: var(--dark);
+}
+@media (max-width: 386px) {
   .cards-container {
     grid-template-columns: repeat(auto-fill, 160px);
   }

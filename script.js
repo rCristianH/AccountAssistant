@@ -157,9 +157,16 @@ function Reshuevosunidad() {
 }
  */
 function botonPagar() {
+  const miElemento = document.querySelector("#factura");
+  const propiedadesCSS = window.getComputedStyle(miElemento);
   const out = document.getElementById("factura");
-  out.style.display = "flex";
-  out.innerHTML = factura
+
+  if (propiedadesCSS.getPropertyValue("display") == "none") {
+    out.style.display = "flex";
+    out.innerHTML = factura;
+  } else {
+    out.style.display = "none";
+  }
 }
 
 function displayArepas() {
@@ -168,19 +175,19 @@ function displayArepas() {
   document.getElementById("bebidas").style.display = "none";
   document.getElementById("huevos").style.display = "none";
 }
-function displayPaquetes(){
+function displayPaquetes() {
   document.getElementById("unidades").style.display = "none";
   document.getElementById("paquetes").style.display = "grid";
   document.getElementById("bebidas").style.display = "none";
   document.getElementById("huevos").style.display = "none";
 }
-function displayBebidas(){
+function displayBebidas() {
   document.getElementById("unidades").style.display = "none";
   document.getElementById("paquetes").style.display = "none";
   document.getElementById("bebidas").style.display = "grid";
   document.getElementById("huevos").style.display = "none";
 }
-function displayHuevos(){
+function displayHuevos() {
   document.getElementById("unidades").style.display = "none";
   document.getElementById("paquetes").style.display = "none";
   document.getElementById("bebidas").style.display = "none";
