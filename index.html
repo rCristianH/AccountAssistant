@@ -23,10 +23,10 @@
         <a href=""><img src="https://i.imgur.com/Sew8Tlq.png" alt="Enlace para refrescar pagina"></a>
 
         <ul>
-            <li><a onclick="displayArepas()">Arepas</a></li>
-            <li><a onclick="displayPaquetes()">Paquetes</a></li>
-            <li><a onclick="displayBebidas()">Bebidas</a></li>
-            <li><a onclick="displayHuevos()">Huevos</a></li>
+            <li><a onclick="displaySection('unidades')">Arepas</a></li>
+            <li><a onclick="displaySection('paquetes')">Paquetes</a></li>
+            <li><a onclick="displaySection('bebidas')">Bebidas</a></li>
+            <li><a onclick="displaySection('huevos')">Huevos</a></li>
         </ul>
     </nav>
 
@@ -39,7 +39,7 @@
                     <p>Delgada</p>
                     <p>$ 1400</p>
                 </div>
-                <button onclick="Sumdelgada()">+</button>
+                <button onclick="sumar('Delgada', 1400)">+</button>
             </div>
             <div class="product-card">
 
@@ -47,7 +47,7 @@
                     <p>Delgada Q</p>
                     <p>$ 3500</p>
                 </div>
-                <button onclick="SumdelgadaQ()">+</button>
+                <button onclick="sumar('Delgada Queso', 3500)">+</button>
             </div>
             <div class="product-card">
 
@@ -55,7 +55,7 @@
                     <p>Delgada H</p>
                     <p>$ 3900</p>
                 </div>
-                <button onclick="SumdelgadaH()">+</button>
+                <button onclick="sumar('Delgada Huevo', 3900)">+</button>
             </div>
             <div class="product-card">
 
@@ -63,7 +63,7 @@
                     <p>Gratinada</p>
                     <p>$ 4800</p>
                 </div>
-                <button onclick="Sumgratinada()">+</button>
+                <button onclick="sumar('Gratinada', 4800)">+</button>
             </div>
             
             <div class="product-card">
@@ -71,28 +71,28 @@
                     <p>Gorda</p>
                     <p>$ 1100</p>
                 </div>
-                <button onclick="Sumgorda()">+</button>
+                <button onclick="sumar('Gorda', 1100)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
                     <p>Gorda Q</p>
                     <p>$ 2700</p>
                 </div>
-                <button onclick="SumgordaQ()">+</button>
+                <button onclick="sumar('Gorda Queso', 2700)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
                     <p>Sin Sal</p>
                     <p>$ 600</p>
                 </div>
-                <button onclick="SumsinSal()">+</button>
+                <button onclick="sumar('Sin sal', 600)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
                     <p>Sin Sal Q</p>
                     <p>$ 2300</p>
                 </div>
-                <button onclick="SumsinSalQ()">+</button>
+                <button onclick="sumar('Sin sal Queso', 2300)">+</button>
             </div>
 
         </div>
@@ -104,21 +104,21 @@
                     <p>Delgada</p>
                     <p>$ 13000</p>
                 </div>
-                <button onclick="SumdelgadaP()">+</button>
+                <button onclick="sumar('Delgada Paquete', 13000)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
                     <p>Gorda</p>
                     <p>$ 10000</p>
                 </div>
-                <button onclick="SumgordaP()">+</button>
+                <button onclick="sumar('Gorda Paquete', 10000)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
                     <p>Sin Sal</p>
                     <p>$ 5500</p>
                 </div>
-                <button onclick="SumsinSalP()">+</button>
+                <button onclick="sumar('Sin sal Paquete', 5500)">+</button>
             </div>
         </div>
 
@@ -128,7 +128,7 @@
                     <p>Cafe</p>
                     <p>$ 1000</p>
                 </div>
-                <button onclick="Sumcafe()">+</button>
+                <button onclick="sumar('Cafe', 1000)">+</button>
             </div>
             <div class="product-card">
 
@@ -136,7 +136,7 @@
                     <p>Cafe Leche</p>
                     <p>$ 1300</p>
                 </div>
-                <button onclick="SumcafeLeche()">+</button>
+                <button onclick="sumar('Cafe Leche', 1300)">+</button>
             </div>
             <div class="product-card">
 
@@ -144,7 +144,7 @@
                     <p>Chocolate</p>
                     <p>$ 2500</p>
                 </div>
-                <button onclick="Sumchocolate()">+</button>
+                <button onclick="sumar('Chocolate', 2500)">+</button>
             </div>
             <div class="product-card">
 
@@ -152,7 +152,7 @@
                     <p>Vaso</p>
                     <p>$ 300</p>
                 </div>
-                <button onclick="Sumcup()">+</button>
+                <button onclick="sumar('Empaque Llevar', 300)">+</button>
             </div>
         </div>
         <div class="cards-container" id="huevos">
@@ -161,7 +161,7 @@
                     <p>Huevos</p>
                     <p>$ 2500</p>
                 </div>
-                <button onclick="Sumhuevos()">+</button>
+                <button onclick="sumar('Huevos', 2500)">+</button>
             </div>
             <div class="product-card">
 
@@ -169,7 +169,7 @@
                     <p>Huevo</p>
                     <p>$ 1300</p>
                 </div>
-                <button onclick="Sumhuevosunidad()">+</button>
+                <button onclick="sumar('Huevo', 1300)">+</button>
             </div>
             <div class="product-card">
                 <div class="product-info">
@@ -180,7 +180,7 @@
         </div>
 
     </section>
-    <aside id="factura" id="factura2">
+    <aside id="factura" id="factura2" style="display: none;">
 
 
 
@@ -196,7 +196,7 @@
 
 
 
-    <script src="./script.js">
+    <script src="./optimizedjs.js">
     </script>
 
 </body>
