@@ -15,6 +15,7 @@ const sinSalP = 5500;
 const cafe = 1000;
 const cafeLeche = 1300;
 const chocolate = 2500;
+const cup = 300;
 //huevos
 const eggs = 2500;
 const egg = 1300;
@@ -86,6 +87,10 @@ function SumcafeLeche() {
 function Sumchocolate() {
   elementMod.innerHTML = chocolate + toNumber();
   factura += `<div>${chocolate} Chocolate</div>`;
+}
+function Sumcup() {
+  elementMod.innerHTML = cup + toNumber();
+  factura += `<div>${cup} Vaso</div>`;
 }
 
 function Sumhuevos() {
