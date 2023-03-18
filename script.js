@@ -1,146 +1,73 @@
-//unidad
-const delgada = 1400;
-const delgadaQ = 3500;
-const delgadaH = 3900;
-const gratinada = 4800;
-const gorda = 1100;
-const gordaQ = 2700;
-const sinSal = 600;
-const sinSalQ = 2300;
-//paquete
-const delgadaP = 13000;
-const gordaP = 10000;
-const sinSalP = 5500;
-//bebida
-const cafe = 1000;
-const cafeLeche = 1300;
-const chocolate = 2500;
-const cup = 300;
-//huevos
-const eggs = 2500;
-const egg = 1300;
+const productos = {
+  arepas: [
+    { nombre: "Delgada", precio: 1400 },
+    { nombre: "Delgada Queso", precio: 3500 },
+    { nombre: "Delgada Huevo", precio: 3900 },
+    { nombre: "Gratinada", precio: 4800 },
+    { nombre: "Gorda", precio: 1100 },
+    { nombre: "Gorda Queso", precio: 2700 },
+    { nombre: "Sin sal", precio: 600 },
+    { nombre: "Sin sal Queso", precio: 2300 },
+  ],
+  paquetes: [
+    { nombre: "Delgada", precio: 13000 },
+    { nombre: "Gorda", precio: 10000 },
+    { nombre: "Sin sal", precio: 5500 },
+  ],
+  bebidas: [
+    { nombre: "Cafe", precio: 1000 },
+    { nombre: "Cafe Leche", precio: 1300 },
+    { nombre: "Chocolate", precio: 2500 },
+    { nombre: "Vaso", precio: 300 },
+  ],
+  huevos: [
+    { nombre: "Huevos", precio: 2500 },
+    { nombre: "Huevo", precio: 1300 },
+  ],
+};
 
-//cuenta final
 const elementMod = document.querySelector(".result > p > span");
-let factura = "";
+const facturaElement = document.getElementById("factura");
+const unidadesElement = document.getElementById("unidades");
+const paquetesElement = document.getElementById("paquetes");
+const bebidasElement = document.getElementById("bebidas");
+const huevosElement = document.getElementById("huevos");
+const numeroElement = document.getElementsByClassName("number-input")[0];
 
-//apoyo
+//Funcion de apoyo
 function toNumber() {
   let valor = Number(elementMod.textContent);
   return valor;
 }
-//operations +
-function Sumdelgada() {
-  elementMod.innerHTML = delgada + toNumber();
-  factura += `<div>${delgada} Delgada</div>`;
-}
-function SumdelgadaQ() {
-  elementMod.innerHTML = delgadaQ + toNumber();
-  factura += `<div>${delgadaQ} Delgada Queso</div>`;
-}
-function SumdelgadaH() {
-  elementMod.innerHTML = delgadaH + toNumber();
-  factura += `<div>${delgadaH} Delgada Huevo</div>`;
-}
-function Sumgratinada() {
-  elementMod.innerHTML = gratinada + toNumber();
-  factura += `<div>${gratinada} Gratinada</div>`;
-}
-function Sumgorda() {
-  elementMod.innerHTML = gorda + toNumber();
-  factura += `<div>${gorda} Gorda</div>`;
-}
-function SumgordaQ() {
-  elementMod.innerHTML = gordaQ + toNumber();
-  factura += `<div>${gordaQ} Gorda Queso</div>`;
-}
-function SumsinSal() {
-  elementMod.innerHTML = sinSal + toNumber();
-  factura += `<div>${sinSal} Sin sal</div>`;
-}
-function SumsinSalQ() {
-  elementMod.innerHTML = sinSalQ + toNumber();
-  factura += `<div>${sinSalQ} Sin sal Queso</div>`;
-}
 
-function SumdelgadaP() {
-  elementMod.innerHTML = delgadaP + toNumber();
-  factura += `<div>${delgadaP} Delgada Paquete</div>`;
-}
-function SumgordaP() {
-  elementMod.innerHTML = gordaP + toNumber();
-  factura += `<div>${gordaP} Gorda Paquete</div>`;
-}
-function SumsinSalP() {
-  elementMod.innerHTML = sinSalP + toNumber();
-  factura += `<div>${sinSalP} Sin sal Paquete</div>`;
-}
+const items = [];
 
-function Sumcafe() {
-  elementMod.innerHTML = cafe + toNumber();
-  factura += `<div>${cafe} Cafe</div>`;
-}
-function SumcafeLeche() {
-  elementMod.innerHTML = cafeLeche + toNumber();
-  factura += `<div>${cafeLeche} Cafe Leche</div>`;
-}
-function Sumchocolate() {
-  elementMod.innerHTML = chocolate + toNumber();
-  factura += `<div>${chocolate} Chocolate</div>`;
-}
-function Sumcup() {
-  elementMod.innerHTML = cup + toNumber();
-  factura += `<div>${cup} Vaso</div>`;
-}
-
-function Sumhuevos() {
-  elementMod.innerHTML = eggs + toNumber();
-  factura += `<div>${eggs} Huevos</div>`;
-}
-function Sumhuevosunidad() {
-  elementMod.innerHTML = egg + toNumber();
-  factura += `<div>${egg} Huevo</div>`;
+function sumar(nombre, precio) {
+  elementMod.textContent = precio + toNumber();
+  items.push(`<div>${precio} ${nombre}</div>`);
 }
 function otroPrecio() {
   let value = Number(document.getElementsByClassName("number-input")[0].value);
-  elementMod.innerHTML = value + toNumber();
-  factura += `<div>${value} Otro valor</div>`;
+  elementMod.textContent = value + toNumber();
+  items.push(`<div>${value} Otro valor</div>`);
 }
-
+//Funcion que muestra u oculta la factura
 function botonPagar() {
-  const miElemento = document.querySelector("#factura");
-  const propiedadesCSS = window.getComputedStyle(miElemento);
-  const out = document.getElementById("factura");
-
-  if (propiedadesCSS.getPropertyValue("display") == "none") {
-    out.style.display = "flex";
-    out.innerHTML = factura;
+  const facturaElement = document.getElementById("factura");
+  if (facturaElement.style.display === "none") {
+    facturaElement.style.display = "flex";
+    facturaElement.innerHTML = items.join("");
   } else {
-    out.style.display = "none";
+    facturaElement.style.display = "none";
   }
 }
 
-function displayArepas() {
-  document.getElementById("unidades").style.display = "grid";
-  document.getElementById("paquetes").style.display = "none";
-  document.getElementById("bebidas").style.display = "none";
-  document.getElementById("huevos").style.display = "none";
-}
-function displayPaquetes() {
-  document.getElementById("unidades").style.display = "none";
-  document.getElementById("paquetes").style.display = "grid";
-  document.getElementById("bebidas").style.display = "none";
-  document.getElementById("huevos").style.display = "none";
-}
-function displayBebidas() {
-  document.getElementById("unidades").style.display = "none";
-  document.getElementById("paquetes").style.display = "none";
-  document.getElementById("bebidas").style.display = "grid";
-  document.getElementById("huevos").style.display = "none";
-}
-function displayHuevos() {
-  document.getElementById("unidades").style.display = "none";
-  document.getElementById("paquetes").style.display = "none";
-  document.getElementById("bebidas").style.display = "none";
-  document.getElementById("huevos").style.display = "grid";
+//Funcion que oculta o muestra los tipos de productos
+function displaySection(section) {
+  const sections = ["unidades", "paquetes", "bebidas", "huevos"];
+  sections.forEach(
+    (s) =>
+      (document.getElementById(s).style.display =
+        s === section ? "grid" : "none")
+  );
 }
