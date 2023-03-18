@@ -116,9 +116,10 @@ aside {
   flex-direction: column;
   position: absolute;
   width: 300px;
-  height: 500px;
+  max-height: 600px;
+  height: 90%;
   background-color: var(--very-light-pink);
-  top: calc(50% - 260px);
+  top: calc(50% - 45%);
   right: calc(50% - 160px);
   font-size: 14px;
   border-radius: 10px;
