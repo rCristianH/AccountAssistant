@@ -65,7 +65,7 @@
                 </div>
                 <button onclick="sumar('Gratinada', 4800)">+</button>
             </div>
-            
+
             <div class="product-card">
                 <div class="product-info">
                     <p>Gorda</p>
@@ -197,6 +197,14 @@
 
 
     <script src="./script.js">
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./service-worker.js');
+            });
+        }
     </script>
 
 </body>
