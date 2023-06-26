@@ -23,6 +23,7 @@ const productos = {
   huevos: [
     { nombre: "Huevos", precio: 2500 },
     { nombre: "Huevo", precio: 1300 },
+    { nombre: "Pericos", precio: 3500 },
   ],
 };
 
