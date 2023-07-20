@@ -3,11 +3,11 @@ const productos = {
     { nombre: "Delgada", precio: 1400 },
     { nombre: "Delgada Queso", precio: 3500 },
     { nombre: "Delgada Huevo", precio: 3900 },
-    { nombre: "Gratinada", precio: 4800 },
+    { nombre: "Gratinada", precio: 5000 },
     { nombre: "Gorda", precio: 1100 },
     { nombre: "Gorda Queso", precio: 2700 },
     { nombre: "Sin sal", precio: 600 },
-    { nombre: "Sin sal Queso", precio: 2300 },
+    { nombre: "Sin sal Queso", precio: 2500 },
   ],
   paquetes: [
     { nombre: "Delgada", precio: 13000 },
