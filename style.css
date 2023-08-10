@@ -116,7 +116,7 @@ aside {
   position: absolute;
   width: 300px;
   max-height: 600px;
-  height: 90%;
+  height: 78%;
   background-color: var(--very-light-pink);
   top: calc(50% - 45%);
   right: calc(50% - 160px);
@@ -147,7 +147,7 @@ footer {
   margin-top: 0;
   margin-bottom: 0;
 }
-.result button {
+.result button, #generarRecibo{
   width: 80px;
   height: 50px;
   border-radius: 20px;
@@ -157,7 +157,12 @@ footer {
   font-size: var(--md);
   font-weight: bold;
 }
-.result button:active {
+#generarRecibo{
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+}
+.result button:active, #generarRecibo:active{
   border: 1px solid var(--dark);
   background-color: var(--hospital-green);
   color: var(--dark);
