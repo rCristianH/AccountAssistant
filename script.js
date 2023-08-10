@@ -58,7 +58,6 @@ function otroPrecio() {
 
 // Funcion que muestra u oculta la factura
 function botonPagar() {
-  const facturaElement = document.getElementById("factura");
   if (facturaElement.style.display === "none") {
     facturaElement.style.display = "flex";
     updatePage();
@@ -70,8 +69,7 @@ function botonPagar() {
 
 // Función para actualizar el contenido en la página
 function updatePage() {
-  const facturaElement = document.getElementById("factura");
-  facturaElement.innerHTML = generateHTML(pedidos);
+  facturaElement.innerHTML = generateHTML(pedidos) + '<button id="generarRecibo" onclick="imprimirJSON()">Generar Recibo</button>';
 }
 
 // Función para generar el JSON a partir de los elementos del array
@@ -88,7 +86,6 @@ function generateHTML(pedidos) {
 }
 
 // Función para imprimir el JSON en la consola
-//Actualmente sin boton de activacion
 function imprimirJSON() {
   const factura = generateJSON();
   console.log(JSON.stringify([factura], null, 2)); // Imprimir JSON en la consola
