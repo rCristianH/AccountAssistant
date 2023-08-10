@@ -41,26 +41,57 @@ function toNumber() {
   return valor;
 }
 
-const items = [];
+const pedidos = [];
 
 function sumar(nombre, precio) {
   elementMod.textContent = precio + toNumber();
-  items.push(`<div>${precio} ${nombre}</div>`);
+  pedidos.push({ nombre: nombre, precio: precio });
+  updatePage();
 }
+
 function otroPrecio() {
   let value = Number(document.getElementsByClassName("number-input")[0].value);
   elementMod.textContent = value + toNumber();
-  items.push(`<div>${value} Otro valor</div>`);
+  pedidos.push({ nombre: "Otro valor", precio: value });
+  updatePage();
 }
-//Funcion que muestra u oculta la factura
+
+// Funcion que muestra u oculta la factura
 function botonPagar() {
   const facturaElement = document.getElementById("factura");
   if (facturaElement.style.display === "none") {
     facturaElement.style.display = "flex";
-    facturaElement.innerHTML = items.join("");
+    updatePage();
   } else {
     facturaElement.style.display = "none";
   }
+}
+
+
+// Función para actualizar el contenido en la página
+function updatePage() {
+  const facturaElement = document.getElementById("factura");
+  facturaElement.innerHTML = generateHTML(pedidos);
+}
+
+// Función para generar el JSON a partir de los elementos del array
+function generateJSON() {
+  return {
+    fecha: new Date().toString(),
+    pedido: pedidos
+  };
+}
+
+// Función para generar el HTML a partir de los elementos del array
+function generateHTML(pedidos) {
+  return pedidos.map(item => `<div>${item.precio} ${item.nombre}</div>`).join("");
+}
+
+// Función para imprimir el JSON en la consola
+//Actualmente sin boton de activacion
+function imprimirJSON() {
+  const factura = generateJSON();
+  console.log(JSON.stringify([factura], null, 2)); // Imprimir JSON en la consola
 }
 
 //Funcion que oculta o muestra los tipos de productos
