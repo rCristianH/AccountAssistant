@@ -74,10 +74,12 @@ function updatePage() {
 
 // Función para generar el JSON a partir de los elementos del array
 function generateJSON() {
-  return {
+  const factura = {
     fecha: new Date().toString(),
     pedido: pedidos
   };
+  generateAndDownloadJSON(factura);
+  return factura;
 }
 
 // Función para generar el HTML a partir de los elementos del array
@@ -89,6 +91,22 @@ function generateHTML(pedidos) {
 function imprimirJSON() {
   const factura = generateJSON();
   console.log(JSON.stringify([factura], null, 2)); // Imprimir JSON en la consola
+}
+
+function generateAndDownloadJSON(data) {
+  const jsonBlob = new Blob([JSON.stringify([data], null, 2)], { type: 'application/json' });
+  const jsonUrl = URL.createObjectURL(jsonBlob);
+
+  const downloadLink = document.createElement('a');
+  downloadLink.href = jsonUrl;
+  downloadLink.download = 'recibo.json';
+
+  // Agrega el enlace al documento y haz clic en él para descargar el archivo
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+
+  // Elimina el enlace después de la descarga
+  document.body.removeChild(downloadLink);
 }
 
 //Funcion que oculta o muestra los tipos de productos
