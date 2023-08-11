@@ -55,6 +55,11 @@ function otroPrecio() {
   pedidos.push({ nombre: "Otro valor", precio: value });
   updatePage();
 }
+function agregaNombre() {
+  let value = String(document.getElementsByClassName("name-input")[0].value);
+  return value
+}
+
 
 // Funcion que muestra u oculta la factura
 function botonPagar() {
@@ -76,6 +81,7 @@ function updatePage() {
 function generateJSON() {
   const factura = {
     fecha: new Date().toString(),
+    nombreCliente: agregaNombre(),
     pedido: pedidos
   };
   generateAndDownloadJSON(factura);

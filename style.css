@@ -102,7 +102,7 @@ nav ul a:hover {
   margin-top: 0;
   margin-bottom: 0;
 }
-.number-input {
+.number-input, .name-input {
   width: 100px;
   height: 30px;
   background: var(--text-input-field);
