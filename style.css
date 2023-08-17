@@ -126,6 +126,9 @@ aside {
   color: var(--dark);
   padding: 10px;
 }
+#factura table{
+  width: inherit;
+}
 footer {
   width: 100%;
 }
