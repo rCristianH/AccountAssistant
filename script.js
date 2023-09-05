@@ -85,6 +85,7 @@ function generateJSON() {
     pedido: pedidos
   };
   generateAndDownloadJSON(factura);
+  sendBack(factura)
   return factura;
 }
 
@@ -218,6 +219,24 @@ function generateAndDownloadJSON(data) {
   // Elimina el enlace después de la descarga
   document.body.removeChild(downloadLink);
 }
+
+const sendBack = async (factura) => {
+  try {
+    const response = await fetch('url/guardar-json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(factura)
+    });
+
+    const data = await response.text();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
 
 //Funcion que oculta o muestra los tipos de productos
 function displaySection(section) {
