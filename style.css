@@ -54,6 +54,10 @@ nav ul a:hover {
 #huevos {
   display: none;
 }
+.generar{
+  display: none;
+  margin-left: 10px;
+}
 
 .cards-container {
   display: grid;
@@ -125,6 +129,12 @@ aside {
   border: 1px solid black;
   color: var(--dark);
   padding: 10px;
+}
+aside .client-name {
+  font-weight: 700;
+}
+.client-name--span{
+  font-weight: 500;
 }
 #factura table{
   width: inherit;
