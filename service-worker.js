@@ -6,7 +6,7 @@ const CACHE_VERSION = 1;
 let CURRENT_CACHES = {
   offline: "offline-v" + CACHE_VERSION,
 };
-const OFFLINE_URL = "./index.html";
+const OFFLINE_URL = "./offline.html";
 
 function createCacheBustedRequest(url) {
   let request = new Request(url, { cache: "reload" });
@@ -28,6 +28,8 @@ self.addEventListener("install", (event) => {
         cache.add("./script.js"),
         cache.add("./style.css"),
         cache.add("./assets/1fad3.svg"),
+        cache.add("https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"),
+        cache.add("https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js"),
         // Agrega aquí otros recursos que necesites cachear
       ]);
     })
