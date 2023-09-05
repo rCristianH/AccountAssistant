@@ -34,6 +34,7 @@ jsPDFScript.type = "text/javascript";
 const elementMod = document.querySelector(".result > p > span");
 const facturaElement = document.getElementById("factura");
 const generarRecibo = document.querySelector("#generarRecibo");
+const generarReciboAlt = document.querySelector("#generarReciboAlt");
 const unidadesElement = document.getElementById("unidades");
 const paquetesElement = document.getElementById("paquetes");
 const bebidasElement = document.getElementById("bebidas");
@@ -70,10 +71,12 @@ function botonPagar() {
   if (facturaElement.style.display === "none") {
     facturaElement.style.display = "flex";
     generarRecibo.style.display = "block";
+    generarReciboAlt.style.display = "block";
     updatePage();
   } else {
     facturaElement.style.display = "none";
     generarRecibo.style.display = "none";
+    generarReciboAlt.style.display = "none";
   }
 }
 
@@ -89,7 +92,7 @@ function generateJSON() {
     nombreCliente: agregaNombre(),
     pedido: pedidos,
   };
-  generateAndDownloadJSON(factura);
+  /* generateAndDownloadJSON(factura); */
   sendBack(factura);
   return factura;
 }
@@ -187,7 +190,7 @@ function imprimirJSON() {
   element.style.border = "1px solid black";
 }
 
-function generateAndDownloadJSON(data) {
+/* function generateAndDownloadJSON(data) {
   const jsonBlob = new Blob([JSON.stringify([data], null, 2)], {
     type: "application/json",
   });
@@ -203,7 +206,7 @@ function generateAndDownloadJSON(data) {
 
   // Elimina el enlace después de la descarga
   document.body.removeChild(downloadLink);
-}
+} */
 
 const sendBack = async (factura) => {
   try {

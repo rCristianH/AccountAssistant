@@ -146,7 +146,7 @@ footer {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  width: 300px;
+  width: 200px;
   height: 70px;
   display: flex;
   align-items: center;
@@ -160,7 +160,7 @@ footer {
   margin-top: 0;
   margin-bottom: 0;
 }
-.result button, #generarRecibo{
+.result button, #generarRecibo, #generarReciboAlt{
   width: 80px;
   height: 50px;
   border-radius: 20px;
@@ -175,7 +175,13 @@ footer {
   position: absolute;
   bottom: 20px;
 }
-.result button:active, #generarRecibo:active{
+#generarReciboAlt{
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  margin-left: 120px;
+}
+.result button:active, #generarRecibo:active, #generarReciboAlt:active{
   border: 1px solid var(--dark);
   background-color: var(--hospital-green);
   color: var(--dark);
