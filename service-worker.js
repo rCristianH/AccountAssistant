@@ -22,10 +22,14 @@ function createCacheBustedRequest(url) {
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    fetch(createCacheBustedRequest(OFFLINE_URL)).then(function (response) {
-      return caches.open(CURRENT_CACHES.offline).then(function (cache) {
-        return cache.put(OFFLINE_URL, response);
-      });
+    caches.open(CURRENT_CACHES.offline).then(function (cache) {
+      return Promise.all([
+        cache.put(OFFLINE_URL, fetch(createCacheBustedRequest(OFFLINE_URL))),
+        cache.add("./script.js"),
+        cache.add("./style.css"),
+        cache.add("./assets/1fad3.svg"),
+        // Agrega aquí otros recursos que necesites cachear
+      ]);
     })
   );
 });
@@ -60,6 +64,26 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request).catch((error) => {
         console.log("Fetch failed; returning offline page instead.", error);
         return caches.match(OFFLINE_URL);
+      })
+    );
+  } else if (
+    event.request.method === "GET" &&
+    event.request.headers.get("accept").includes("text/css")
+  ) {
+    // Si la solicitud es para un archivo CSS, intenta recuperarlo de la caché
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  } else if (
+    event.request.method === "GET" &&
+    event.request.headers.get("accept").includes("text/javascript")
+  ) {
+    // Si la solicitud es para un archivo JavaScript, intenta recuperarlo de la caché
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
       })
     );
   }
