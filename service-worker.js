@@ -24,7 +24,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CURRENT_CACHES.offline).then(function (cache) {
       return Promise.all([
-        cache.put(OFFLINE_URL, fetch(createCacheBustedRequest(OFFLINE_URL))),
+        fetch(createCacheBustedRequest(OFFLINE_URL)).then(function (response) {
+          return cache.put(OFFLINE_URL, response);
+        }),
         cache.add("./script.js"),
         cache.add("./style.css"),
         cache.add("./assets/1fad3.svg"),
