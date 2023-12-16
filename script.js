@@ -182,10 +182,10 @@ function imprimirJSON() {
   html2canvas(element).then(function (canvas) {
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
-    console.log(pdf);
-    const pdfWidth = pdf.internal.pageSize.height;
-    console.log(pdfWidth);
+    console.log("Error to fix")
+    /* El archivo de salida si son muchos productos no se muestra completo en el pdf */
     pdf.addImage(imgData, "PNG", 0, 0);
+    /* pdf.height() */
 
     // Descargar el PDF
     pdf.save("mi-documento.pdf");
