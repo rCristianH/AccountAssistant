@@ -186,6 +186,9 @@ footer {
   background-color: var(--hospital-green);
   color: var(--dark);
 }
+#factura{
+  display: none;
+}
 @media (max-width: 386px) {
   .cards-container {
     grid-template-columns: repeat(auto-fill, 160px);
@@ -196,5 +199,14 @@ footer {
   .product-card button {
     width: 40px;
     height: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  nav, .main-container{
+    width: 70%;
+  }
+  #factura{
+    display: flex;
+    right: calc(3%);
   }
 }
