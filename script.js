@@ -26,6 +26,8 @@ const productos = {
     { nombre: "Pericos", precio: 3500 },
   ],
 };
+  
+
 
 const jsPDFScript = document.createElement("script");
 jsPDFScript.src =
@@ -41,6 +43,8 @@ const bebidasElement = document.getElementById("bebidas");
 const huevosElement = document.getElementById("huevos");
 const numeroElement = document.getElementsByClassName("number-input")[0];
 
+
+
 //Funcion de apoyo
 function toNumber() {
   let valor = Number(elementMod.textContent);
@@ -54,6 +58,11 @@ function sumar(nombre, precio) {
   pedidos.push({ nombre: nombre, precio: precio });
   updatePage();
 }
+
+(()=>{
+  //inserta los datos del header de la tabla
+  facturaElement.innerHTML = generateHTML(pedidos);
+})()
 
 function otroPrecio() {
   let value = Number(document.getElementsByClassName("number-input")[0].value);
