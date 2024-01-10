@@ -62,6 +62,11 @@ function sumar(nombre, precio) {
 (()=>{
   //inserta los datos del header de la tabla
   facturaElement.innerHTML = generateHTML(pedidos);
+  let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  if(windowWidth <= 1000) {
+    document.getElementById("factura").style.display = "none"
+  }
 })()
 
 function otroPrecio() {
@@ -185,7 +190,6 @@ function imprimirJSON() {
     console.log("Error to fix")
     /* El archivo de salida si son muchos productos no se muestra completo en el pdf */
     pdf.addImage(imgData, "PNG", 0, 0);
-    /* pdf.height() */
 
     // Descargar el PDF
     pdf.save("mi-documento.pdf");
