@@ -23,7 +23,6 @@ export const imprimirJSON = () => {
 
  
   html2canvas(element).then(canvas => {
-    console.log(canvas.width, canvas.height)
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
     pdf.addImage(imgData, 0, 0, 210, 310);
