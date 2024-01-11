@@ -1,6 +1,6 @@
 # Gestor de cuentas
 
-**Descripción**: Esta es una Progressive Web App (PWA) que permite a los usuarios realizar pedidos de productos, como arepas, paquetes, bebidas y huevos, y generar una factura detallada de su pedido.
+**Descripción**: Esta es una Progressive Web App (PWA) que permite a los usuarios realizar orders de productos, como arepas, paquetes, bebidas y huevos, y generar una factura detallada de su pedido.
 
 ## Características Principales
 
@@ -53,4 +53,4 @@ Este proyecto está bajo la Licencia GNU GPLv3. Puedes consultar el archivo [LIC
 
 Agradecemos a todas las personas que han contribuido al desarrollo de esta aplicación y a la comunidad de código abierto por su apoyo.
 
-¡Esperamos que disfrutes utilizando esta PWA para realizar tus pedidos de productos! Si tienes alguna pregunta o problema, no dudes en ponerte en contacto con nosotros.
+¡Esperamos que disfrutes utilizando esta PWA para realizar tus orders de productos! Si tienes alguna pregunta o problema, no dudes en ponerte en contacto con nosotros.

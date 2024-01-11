@@ -55,7 +55,7 @@ nav ul a:hover {
   display: none;
 }
 .generar{
-  display: none;
+  display: block;
   margin-left: 10px;
 }
 

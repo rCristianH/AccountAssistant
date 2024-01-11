@@ -276,18 +276,18 @@
             return valor;
         }
 
-        const pedidos = [];
+        const orders = [];
 
         function sumar(nombre, precio) {
             elementMod.textContent = precio + toNumber();
-            pedidos.push({ nombre: nombre, precio: precio });
+            orders.push({ nombre: nombre, precio: precio });
             updatePage();
         }
 
         function otroPrecio() {
             let value = Number(document.getElementsByClassName("number-input")[0].value);
             elementMod.textContent = value + toNumber();
-            pedidos.push({ nombre: "Otro valor", precio: value });
+            orders.push({ nombre: "Otro valor", precio: value });
             updatePage();
         }
         function agregaNombre() {
@@ -311,7 +311,7 @@
 
         // Función para actualizar el contenido en la página
         function updatePage() {
-            facturaElement.innerHTML = generateHTML(pedidos);
+            facturaElement.innerHTML = generateHTML(orders);
         }
 
         // Función para generar el JSON a partir de los elementos del array
@@ -319,7 +319,7 @@
             const factura = {
                 fecha: new Date().toString(),
                 nombreCliente: agregaNombre(),
-                pedido: pedidos,
+                pedido: orders,
             };
             /* generateAndDownloadJSON(factura); */
             sendBack(factura);
@@ -327,12 +327,12 @@
         }
 
         // Función para generar el HTML a partir de los elementos del array
-        function generateHTML(pedidos) {
+        function generateHTML(orders) {
             const productos = {}; // Objeto para acumular cantidades y totales por producto
             let totalGeneral = 0; // Variable para acumular el total general
 
-            // Procesar los pedidos y acumular información en el objeto 'productos'
-            pedidos.forEach((item) => {
+            // Procesar los orders y acumular información en el objeto 'productos'
+            orders.forEach((item) => {
                 if (!productos[item.nombre]) {
                     productos[item.nombre] = { cantidad: 0, precio: item.precio };
                 }
