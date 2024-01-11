@@ -34,18 +34,6 @@
         </div>
 
         <div class="cards-container" id="huevos">
-            <div class="product-card">
-                <div class="product-info">
-                    <input type="number" placeholder="Otro precio" class="number-input">
-                </div>
-                <button onclick="otroPrecio()">&gt;</button>
-            </div>
-            <div class="product-card">
-                <div class="product-info">
-                    <input type="text" placeholder="Nombre" class="name-input">
-                </div>
-                <button onclick="agregaNombre()">&gt;</button>
-            </div>
         </div>
 
     </section>
@@ -55,7 +43,8 @@
     </footer>
 
 
-    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js"></script>
     <script type="module" src="/src/main.js"></script>
     <script>
         if ('serviceWorker' in navigator) {

@@ -13,26 +13,26 @@ export const generateJSON = () => {
 };
 export const imprimirJSON = () => {
   const element = document.querySelector("#factura");
-  element.style.width = "810px";
-  element.style.maxHeight = "auto";
-  element.style.fontSize = "28px";
+  element.style.width = "400px";
+  element.style.height = "800px"
+  element.style.fontSize = "20px";
   element.style.backgroundColor = "white";
   element.style.position = "static";
   element.style.borderRadius = "0";
   element.style.border = "none";
 
-  html2canvas(element).then(function (canvas) {
+ 
+  html2canvas(element).then(canvas => {
+    console.log(canvas.width, canvas.height)
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
-    console.log("Error to fix");
-    /* El archivo de salida si son muchos productos no se muestra completo en el pdf */
-    pdf.addImage(imgData, "PNG", 0, 0);
+    pdf.addImage(imgData, 0, 0, 210, 310);
 
     // Descargar el PDF
     pdf.save("mi-documento.pdf");
   });
   element.style.width = "300px";
-  element.style.maxHeight = "600";
+  element.style.maxHeight = "600px";
   element.style.fontSize = "14px";
   element.style.backgroundColor = "var(--very-light-pink)";
   element.style.position = "absolute";

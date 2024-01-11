@@ -23,7 +23,6 @@ export const updatePage = () => {
   facturaElement.innerHTML = generateTable(orders);
 }
 export const toNumber = () => {
-  console.log(elementMod)
   let valor = Number(elementMod.innerHTML);
   return valor;
 }

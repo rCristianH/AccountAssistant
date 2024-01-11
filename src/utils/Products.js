@@ -1,6 +1,8 @@
+import { addClientName, sumOtherPrice } from "./utils";
+
 export const productos = {
   arepas: [
-    { shortName: "Delgada", name: "Delgada", price: 1400},
+    { shortName: "Delgada", name: "Delgada", price: 1400 },
     { shortName: "Delgada Q", name: "Delgada Queso", price: 4500 },
     { shortName: "Delgada H", name: "Delgada Huevo", price: 3900 },
     { shortName: "Gratinada", name: "Gratinada", price: 6000 },
@@ -25,6 +27,19 @@ export const productos = {
     { shortName: "Huevos", name: "Huevos", price: 2500 },
     { shortName: "Huevo", name: "Huevo", price: 1300 },
     { shortName: "Pericos", name: "Pericos", price: 3500 },
+    {
+      input: "input",
+      inputType: "number",
+      inputPlaceholder: "Otro Precio",
+      inputFunction: sumOtherPrice,
+      inputClass: "number-input",
+    },
+    {
+      input: "input",
+      inputType: "text",
+      inputPlaceholder: "Nombre",
+      inputFunction: addClientName,
+      inputClass: "name-input",
+    },
   ],
 };
-  

@@ -4,7 +4,6 @@ import { navigate } from "./HeaderList";
 
 const writeNav = () => {
   const nodes = [];
-  console.log(navigate);
   navigate.nav.forEach((e) => {
     const listELement = document.createElement("li");
     const listSpanElement = document.createElement("a");
