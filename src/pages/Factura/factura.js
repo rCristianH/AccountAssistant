@@ -15,6 +15,8 @@ export const generateJSON = () => {
 };
 export const imprimirJSON = () => {
   const element = document.querySelector("#factura");
+  const estilos  = window.getComputedStyle(element)
+  console.log(estilos)
   element.style.width = "400px";
   element.style.height = "800px";
   element.style.fontSize = "20px";
@@ -32,7 +34,7 @@ export const imprimirJSON = () => {
     pdf.save("mi-documento.pdf");
   });
   element.style.width = "300px";
-  element.style.maxHeight = "600px";
+  element.style.height = "78%";
   element.style.fontSize = "14px";
   element.style.backgroundColor = "var(--very-light-pink)";
   element.style.position = "absolute";
