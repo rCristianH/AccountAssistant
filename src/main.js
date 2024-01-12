@@ -1,11 +1,8 @@
-import "./styles/style.css";
 import { footer } from "./templates/footer/Footer";
-import { header } from "./templates/header/Header";
 import { facturaElement } from "./utils/Calls";
 import { firstPrintTable, updatePage } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
 
-header();
 footer();
 export const elementMod = document.querySelector(".spanResultPrice");
 export const generarRecibo = document.querySelector("#generarRecibo");

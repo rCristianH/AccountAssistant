@@ -1,8 +1,8 @@
 import { orders } from "../../utils/Calls";
 import { addClientName } from "../../utils/utils";
-import jsPDF from "jspdf";
+/* import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-
+ */
 export const generateJSON = () => {
   const factura = {
     fecha: new Date().toString(),

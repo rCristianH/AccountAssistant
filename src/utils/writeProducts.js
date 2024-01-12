@@ -47,5 +47,7 @@ const createProducts = (type) => {
 
 export const writeProducts = (type, container) => {
   const nodes = createProducts(type);
-  document.querySelector(container).append(...nodes);
+  const cont =document.querySelector(container)
+  cont.innerHTML = ""
+  cont.append(...nodes);
 };

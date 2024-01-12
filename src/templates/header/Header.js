@@ -1,7 +1,16 @@
-import { headerNavList } from "../../utils/Calls";
-import { displaySection } from "../../utils/utils";
+/* import { headerNavList } from "../../utils/Calls";
+import { displaySection } from "../../utils/utils"; */
 import { navigate } from "./HeaderList";
 
+const headerNavList = document.querySelector(".nav--header--ul")
+function displaySection(section) {
+  const sections = ["unidades", "paquetes", "bebidas", "huevos"];
+  sections.forEach(
+    (s) =>
+      (document.getElementById(s).style.display =
+        s === section ? "grid" : "none")
+  );
+}
 const writeNav = () => {
   const nodes = [];
   navigate.nav.forEach((e) => {
