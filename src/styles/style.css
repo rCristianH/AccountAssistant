@@ -24,10 +24,10 @@ nav {
   text-decoration: none;
   color: var(--black);
 }
-nav img {
+.nav--header--img {
   width: 200px;
 }
-nav ul {
+.nav--header--ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -35,14 +35,14 @@ nav ul {
   align-items: center;
   height: 60px;
 }
-nav ul a {
+.nav--header--ul--a {
   text-decoration: none;
   color: var(--dark);
   border: 1px solid var(--white);
   padding: 8px;
   border-radius: 8px;
 }
-nav ul a:hover {
+.nav--header--ul--a:hover {
   color: var(--hospital-green);
   border: 1px solid var(--hospital-green);
 }
@@ -79,7 +79,7 @@ nav ul a:hover {
   justify-content: space-around;
   border-radius: 20px;
 }
-.product-card button {
+.product-card--button {
   width: 50px;
   height: 50px;
   border-radius: 20px;
@@ -90,7 +90,7 @@ nav ul a:hover {
   font-weight: bold;
 }
 
-.product-card button:active {
+.product-card--button:active {
   background-color: var(--hospital-green);
   color: var(--dark);
 }
@@ -99,13 +99,13 @@ nav ul a:hover {
   flex-direction: column;
   align-items: center;
 }
-.product-info p:nth-child(1) {
+.product-info--p--name {
   font-size: var(--sm);
   margin-top: 0;
   margin-bottom: 4px;
   color: var(--black);
 }
-.product-info p:nth-child(2) {
+.product-info--p--price {
   font-size: var(--md);
   font-weight: bold;
   margin-top: 0;
@@ -135,13 +135,13 @@ aside {
   color: var(--dark);
   padding: 10px;
 }
-aside .client-name {
+.client-name {
   font-weight: 700;
 }
 .client-name--span{
   font-weight: 500;
 }
-#factura table{
+.factura--table{
   width: inherit;
 }
 footer {
@@ -159,13 +159,13 @@ footer {
   justify-content: space-around;
   border-radius: 20px;
 }
-.result p {
+.result--p {
   font-size: var(--md);
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
-.result button, #generarRecibo, #generarReciboAlt{
+.result--button, #generarRecibo, #generarReciboAlt{
   width: 80px;
   height: 50px;
   border-radius: 20px;
@@ -186,7 +186,7 @@ footer {
   bottom: 20px;
   margin-left: 120px;
 }
-.result button:active, #generarRecibo:active, #generarReciboAlt:active{
+.result--button:active, #generarRecibo:active, #generarReciboAlt:active{
   border: 1px solid var(--dark);
   background-color: var(--hospital-green);
   color: var(--dark);

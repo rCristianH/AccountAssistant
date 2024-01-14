@@ -28,9 +28,10 @@ const createProducts = (type) => {
       // Crear el elemento div con la clase 'product-info' y agregar los elementos p
       const productInfo = document.createElement("div");
       productInfo.className = "product-info";
-      productInfo.innerHTML = `<p>${e.shortName}</p><p>${e.price}</p>`;
+      productInfo.innerHTML = `<p class="product-info--p--name">${e.shortName}</p><p class="product-info--p--price">${e.price}</p>`;
       // Crear el botón con el evento onclick
       const addButton = document.createElement("button");
+      addButton.className = "product-card--button"
       addButton.textContent = "+";
       addButton.onclick = function () {
         sumPrice(e.name, e.price);

@@ -7,6 +7,7 @@ export const footer = () => {
   const resultDiv = document.createElement("div");
   resultDiv.className = "result";
   const pElement = document.createElement("p");
+  pElement.className = "result--p"
   pElement.textContent = "$";
   const spanElement = document.createElement("span");
   spanElement.textContent = 0;
@@ -14,6 +15,7 @@ export const footer = () => {
   pElement.appendChild(spanElement);
   resultDiv.appendChild(pElement);
   const buttonElement = document.createElement("button");
+  buttonElement.className = "result--button"
   buttonElement.textContent = "Mostrar";
   buttonElement.onclick = function () {
     btnViewBill();

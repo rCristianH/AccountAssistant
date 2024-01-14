@@ -16,6 +16,7 @@ const writeNav = () => {
   navigate.nav.forEach((e) => {
     const listELement = document.createElement("li");
     const listSpanElement = document.createElement("a");
+    listSpanElement.className = "nav--header--ul--a"
     listSpanElement.textContent = e.reference;
     listSpanElement.onclick = function () {
       displaySection(e.name);

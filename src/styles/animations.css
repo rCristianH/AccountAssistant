@@ -1,18 +1,13 @@
 .preCharge, .preCharge  button {
   animation: skeleton;
-  animation-duration: 3s;
+  animation-duration: 3s; 
   animation-iteration-count: infinite;
 }
 @keyframes skeleton {
   0%, 100%{
-    background-color: var(--very-light-pink);
-    border: none;
+    opacity: 0.8;
   }
   50%{
-    background-color: var(--text-input-field);
-    border: none;
+    opacity: 0.3;
   }
-}
-.product-card button{
-  animation-delay: 1s;
 }

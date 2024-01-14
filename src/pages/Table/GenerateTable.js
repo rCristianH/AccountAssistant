@@ -17,7 +17,7 @@ export function generateTable(orders) {
   let optClient = addClientName() == "" ? "Cliente General" : addClientName();
   let html = `
   <div class="client-name">Cliente: <span class="client-name--span">${optClient}</span></div>
-    <table>
+    <table class="factura--table">
       <thead>
         <tr>
           <th>Producto</th>
