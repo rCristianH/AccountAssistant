@@ -15,6 +15,7 @@ const createProducts = (type) => {
       productInput.className = e.inputClass;
       productInfo.appendChild(productInput);
       const addButton = document.createElement("button");
+      addButton.className = "product-card--button-text"
       addButton.textContent = ">";
       addButton.onclick = function () {
         e.inputFunction();
@@ -33,9 +34,8 @@ const createProducts = (type) => {
       const addButton = document.createElement("button");
       addButton.className = "product-card--button"
       addButton.textContent = "+";
-      addButton.onclick = function () {
-        sumPrice(e.name, e.price);
-      };
+      addButton.dataset.name = e.name
+      addButton.dataset.price = e.price
       // Agregar los elementos al DOM
       productCard.appendChild(productInfo);
       productCard.appendChild(addButton);

@@ -1,5 +1,6 @@
 import { footer } from "./templates/footer/Footer";
 import { facturaElement } from "./utils/Calls";
+import { listenerBtn } from "./utils/listeners";
 import { firstPrintTable, updatePage } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
 
@@ -11,6 +12,8 @@ writeProducts("arepas", "#unidades");
 writeProducts("paquetes", "#paquetes");
 writeProducts("bebidas", "#bebidas");
 writeProducts("huevos", "#huevos");
+
+listenerBtn()
 
 firstPrintTable();
 

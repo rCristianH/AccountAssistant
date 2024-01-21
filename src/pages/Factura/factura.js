@@ -1,8 +1,7 @@
 import { orders } from "../../utils/Calls";
 import { addClientName } from "../../utils/utils";
 /* import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
- */
+import html2canvas from "html2canvas"; */
 export const generateJSON = () => {
   const factura = {
     fecha: new Date().toString(),
@@ -15,8 +14,8 @@ export const generateJSON = () => {
 };
 export const imprimirJSON = () => {
   const element = document.querySelector("#factura");
-  const estilos  = window.getComputedStyle(element)
-  console.log(estilos)
+  const estilos = window.getComputedStyle(element);
+  console.log(estilos);
   element.style.width = "400px";
   element.style.height = "800px";
   element.style.fontSize = "20px";
@@ -24,7 +23,6 @@ export const imprimirJSON = () => {
   element.style.position = "static";
   element.style.borderRadius = "0";
   element.style.border = "none";
-
   html2canvas(element).then((canvas) => {
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
