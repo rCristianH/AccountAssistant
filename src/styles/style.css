@@ -135,6 +135,15 @@ aside {
   color: var(--dark);
   padding: 10px;
 }
+.toggleAsideFactura{
+  width: 400px;
+  height: 800px;
+  font-size: 20px;
+  background-color: white;
+  position: static;
+  border-radius: 0;
+  border: none;
+}
 .client-name {
   font-weight: 700;
 }
