@@ -1,6 +1,6 @@
 export default {
   optimizeDeps: {
-    include: ["html2canvas", "jspdf"],
+    include: ["html2canvas"],
   },
 
 };
