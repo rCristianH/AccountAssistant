@@ -5,6 +5,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ["html2canvas"],
   },
+  base: "/AccountAssistant/",
   plugins: [
     VitePWA({
       registerType: "autoUpdate",
