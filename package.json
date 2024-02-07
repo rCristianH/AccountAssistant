@@ -7,13 +7,17 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "serve ./dist"
+    "serve": "serve ./dist",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "vite": "^5.0.8",
     "vite-plugin-pwa": "^0.17.5"
   },
   "dependencies": {
     "html2canvas": "^1.4.1"
-  }
+  },
+  "homepage": "https://rcristianh.github.io/AccountAssistant/"
 }
