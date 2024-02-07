@@ -30,25 +30,25 @@ export default defineConfig({
         categories: ["business", "productivity"],
         icons: [
           {
-            src: "./icon192.png",
+            src: "https://i.imgur.com/AxzRcRG.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "./icon192.png",
+            src: "https://i.imgur.com/AxzRcRG.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "maskable",
           },
           {
-            src: "./icon512.png",
+            src: "https://i.imgur.com/K3Qs8Yb.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "./icon512.png",
+            src: "https://i.imgur.com/K3Qs8Yb.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
@@ -68,6 +68,14 @@ export default defineConfig({
           {
             name: "Home",
             url: "/",
+            icons: [
+              {
+                src: "https://i.imgur.com/0TKBifl.png",
+                sizes: "96x96",
+                type: "image/png",
+                purpose: "any",
+              },
+            ],
           },
         ],
         related_applications: [
