@@ -1,0 +1,19 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "serve ./dist"
+  },
+  "devDependencies": {
+    "vite": "^5.0.8",
+    "vite-plugin-pwa": "^0.17.5"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  }
+}

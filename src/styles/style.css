@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -9,7 +10,6 @@
   --md: 16px;
   --lg: 18px;
 }
-
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -19,10 +19,15 @@ nav {
   flex-direction: column;
   align-items: center;
 }
-nav img {
-  width: 200px;
+.nav--header--a {
+  text-decoration: none;
+  color: var(--black);
 }
-nav ul {
+.nav--header--img {
+  width: 200px;
+  height: 32;
+}
+.nav--header--ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -30,14 +35,14 @@ nav ul {
   align-items: center;
   height: 60px;
 }
-nav ul a {
+.nav--header--ul--a {
   text-decoration: none;
   color: var(--dark);
   border: 1px solid var(--white);
   padding: 8px;
   border-radius: 8px;
 }
-nav ul a:hover {
+.nav--header--ul--a:hover {
   color: var(--hospital-green);
   border: 1px solid var(--hospital-green);
 }
@@ -55,7 +60,7 @@ nav ul a:hover {
   display: none;
 }
 .generar{
-  display: none;
+  display: block;
   margin-left: 10px;
 }
 
@@ -74,7 +79,7 @@ nav ul a:hover {
   justify-content: space-around;
   border-radius: 20px;
 }
-.product-card button {
+.product-card--button, .product-card--button-text {
   width: 50px;
   height: 50px;
   border-radius: 20px;
@@ -85,7 +90,7 @@ nav ul a:hover {
   font-weight: bold;
 }
 
-.product-card button:active {
+.product-card--button:active {
   background-color: var(--hospital-green);
   color: var(--dark);
 }
@@ -94,13 +99,13 @@ nav ul a:hover {
   flex-direction: column;
   align-items: center;
 }
-.product-info p:nth-child(1) {
+.product-info--p--name {
   font-size: var(--sm);
   margin-top: 0;
   margin-bottom: 4px;
   color: var(--black);
 }
-.product-info p:nth-child(2) {
+.product-info--p--price {
   font-size: var(--md);
   font-weight: bold;
   margin-top: 0;
@@ -130,13 +135,22 @@ aside {
   color: var(--dark);
   padding: 10px;
 }
-aside .client-name {
+.toggleAsideFactura{
+  width: 400px;
+  height: 800px;
+  font-size: 20px;
+  background-color: white;
+  position: static;
+  border-radius: 0;
+  border: none;
+}
+.client-name {
   font-weight: 700;
 }
 .client-name--span{
   font-weight: 500;
 }
-#factura table{
+.factura--table{
   width: inherit;
 }
 footer {
@@ -154,13 +168,13 @@ footer {
   justify-content: space-around;
   border-radius: 20px;
 }
-.result p {
+.result--p {
   font-size: var(--md);
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
-.result button, #generarRecibo, #generarReciboAlt{
+.result--button, #generarRecibo, #generarReciboAlt{
   width: 80px;
   height: 50px;
   border-radius: 20px;
@@ -181,7 +195,7 @@ footer {
   bottom: 20px;
   margin-left: 120px;
 }
-.result button:active, #generarRecibo:active, #generarReciboAlt:active{
+.result--button:active, #generarRecibo:active, #generarReciboAlt:active{
   border: 1px solid var(--dark);
   background-color: var(--hospital-green);
   color: var(--dark);
