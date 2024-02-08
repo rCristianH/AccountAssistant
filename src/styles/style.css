@@ -1,18 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --very-light-pink: #c7c7c7;
-  --text-input-field: #f7f7f7;
-  --dark: #232830;
-  --hospital-green: #acd9b2;
+
+  --on-primary: #fff;
+  --on-secondary: #c7c7c7;
+  --text-primary: #31111d;
+  --text-color: #31111d;
+  --text-color-altern: #000;
+  
+  --primary-button: #31111d;
+  --primary-button-hover: #ffd8e4;
+  --text-color-primary-button: #ffd8e4;
+  --text-color-primary-button-hover: #362e31;
+
+  --secondary-button: #633b48;
+  --secondary-button-hover: #ffd8e4;
+  --secondary-button-text: #fff;
+  --secondary-button-text-hover: #381e72;
+
+  --border-text-input: #31111d;
+
+  
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
 }
+.dark{
+  --on-primary: #1c1b1f;
+  --on-secondary: #2b2831;
+  --text-primary: #fff;
+  --text-color: #e8def8;
+  --text-color-altern: #cac4d0;
+
+  --primary-button: #633b48;
+  --primary-button-hover: #ffd8e4;
+  --text-color-primary-button: #ffd8e4;
+  --text-color-primary-button-hover: #362e31;
+
+  --secondary-button: #4a4458;
+  --secondary-button-hover: #bea9ee;
+  --secontary-button-text: #e8def8;
+  --secondary-button-text-hover: #381e72; 
+  
+  --border-text-input: #ffd8e4;
+}
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
+  height: 100vh;
+  background-color: var(--on-primary);
+  position: relative;
 }
 nav {
   display: flex;
@@ -21,11 +57,12 @@ nav {
 }
 .nav--header--a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--text-color);
 }
 .nav--header--img {
   width: 200px;
   height: 32;
+  border-radius: 8px;
 }
 .nav--header--ul {
   list-style: none;
@@ -37,14 +74,18 @@ nav {
 }
 .nav--header--ul--a {
   text-decoration: none;
-  color: var(--dark);
-  border: 1px solid var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--on-primary);
   padding: 8px;
   border-radius: 8px;
 }
 .nav--header--ul--a:hover {
-  color: var(--hospital-green);
-  border: 1px solid var(--hospital-green);
+  color: var(--text-primary);
+  border: 1px solid var(--primary-button);
+}
+.nav--header--ul--a:active {
+  color: var(--text-color-primary-button);
+  background-color: var(--primary-button);
 }
 /* Ocultar */
 #unidades {
@@ -59,7 +100,7 @@ nav {
 #huevos {
   display: none;
 }
-.generar{
+.generar {
   display: block;
   margin-left: 10px;
 }
@@ -75,24 +116,26 @@ nav {
   height: 70px;
   display: flex;
   align-items: center;
-  background-color: var(--very-light-pink);
+  background-color: var(--on-secondary);
   justify-content: space-around;
   border-radius: 20px;
 }
-.product-card--button, .product-card--button-text {
+.product-card--button,
+.product-card--button-text {
   width: 50px;
   height: 50px;
   border-radius: 20px;
-  border: 1px solid var(--dark);
-  background-color: var(--dark);
-  color: var(--white);
+  border: 1px solid var(--secondary-button);
+  background-color: var(--secondary-button);
+  color: var(--secondary-button-text);
   font-size: var(--md);
   font-weight: bold;
 }
 
-.product-card--button:active {
-  background-color: var(--hospital-green);
-  color: var(--dark);
+.product-card--button:active,
+.product-card--button-text:active {
+  background-color: var(--secondary-button-hover);
+  color: var(--secondary-button-text-hover);
 }
 .product-info {
   display: flex;
@@ -103,21 +146,29 @@ nav {
   font-size: var(--sm);
   margin-top: 0;
   margin-bottom: 4px;
-  color: var(--black);
+  color: var(--text-primary);
 }
 .product-info--p--price {
   font-size: var(--md);
+  color: var(--text-color);
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
-.number-input, .name-input {
+.number-input,
+.name-input {
   width: 100px;
   height: 30px;
-  background: var(--text-input-field);
+  background: rgba(0, 0, 0, 0);
   border-radius: 14px;
-  border: 1px solid var(--text-input-field);
+  border: 1px solid var(--border-text-input);
+  color: var(--text-color-altern);
   text-align: center;
+}
+.number-input::placeholder,
+.name-input::placeholder {
+  color: var(--text-color);
+  opacity: 1;
 }
 aside {
   align-items: center;
@@ -126,20 +177,22 @@ aside {
   width: 300px;
   max-height: 600px;
   height: 78%;
-  background-color: var(--very-light-pink);
+  background-color: var(--on-secondary);
   top: calc(50% - 45%);
   right: calc(50% - 160px);
   font-size: 14px;
   border-radius: 10px;
-  border: 1px solid black;
-  color: var(--dark);
+  border: 1px solid var(--border-text-input);
+  color: var(--text-color);
   padding: 10px;
 }
-.toggleAsideFactura{
+/* no modificar */
+.toggleAsideFactura {
   width: 400px;
   height: 800px;
   font-size: 20px;
   background-color: white;
+  color: black;
   position: static;
   border-radius: 0;
   border: none;
@@ -147,10 +200,10 @@ aside {
 .client-name {
   font-weight: 700;
 }
-.client-name--span{
+.client-name--span {
   font-weight: 500;
 }
-.factura--table{
+.factura--table {
   width: inherit;
 }
 footer {
@@ -164,44 +217,62 @@ footer {
   height: 70px;
   display: flex;
   align-items: center;
-  background-color: var(--very-light-pink);
+  background-color: var(--on-secondary);
   justify-content: space-around;
   border-radius: 20px;
 }
 .result--p {
   font-size: var(--md);
+  color: var(--text-color);
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
-.result--button, #generarRecibo, #generarReciboAlt{
+.result--button,
+#generarRecibo,
+#generarReciboAlt {
   width: 80px;
   height: 50px;
   border-radius: 20px;
-  border: 1px solid var(--dark);
-  background-color: var(--dark);
-  color: var(--white);
+  border: 1px solid var(--primary-button);
+  background-color: var(--primary-button);
+  color: var(--text-color-primary-button);
   font-size: var(--md);
   font-weight: bold;
 }
-#generarRecibo{
+#generarRecibo {
   width: 100px;
   position: absolute;
   bottom: 20px;
 }
-#generarReciboAlt{
+#generarReciboAlt {
   width: 100px;
   position: absolute;
   bottom: 20px;
   margin-left: 120px;
 }
-.result--button:active, #generarRecibo:active, #generarReciboAlt:active{
-  border: 1px solid var(--dark);
-  background-color: var(--hospital-green);
-  color: var(--dark);
+.result--button:active,
+#generarRecibo:active,
+#generarReciboAlt:active {
+  border: 1px solid var(--primary-button-hover);
+  background-color: var(--primary-button-hover);
+  color: var(--text-color-primary-button-hover);
 }
-#factura{
+#factura {
   display: none;
+}
+.change-style-button{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-button);
+  background-color: var(--primary-button);
+  color: var(--text-color-primary-button);
+  font-size: var(--lg);
+  font-weight: bold;
 }
 @media (max-width: 386px) {
   .cards-container {
@@ -216,10 +287,11 @@ footer {
   }
 }
 @media (min-width: 1000px) {
-  nav, .main-container{
+  nav,
+  .main-container {
     width: 70%;
   }
-  #factura{
+  #factura {
     display: flex;
     right: calc(3%);
   }

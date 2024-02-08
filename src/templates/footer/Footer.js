@@ -43,4 +43,15 @@ export const footer = () => {
   footerSelect.append(resultDiv);
   footerSelect.appendChild(btnGenJson)
   footerSelect.appendChild(btnGenTicket)
+
+  //Boton para cambiar estilos
+  const btnChangeStyle = document.createElement("button");
+  btnChangeStyle.className = "result--button change-style-button";
+  btnChangeStyle.textContent = "🌓";
+  btnChangeStyle.onclick = function () {
+    const body = document.querySelector("body");
+    body.classList.toggle("dark");
+  };
+  footerSelect.appendChild(btnChangeStyle);
+
 };
