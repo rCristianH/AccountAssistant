@@ -1,4 +1,5 @@
-import { sumPrice } from "./utils";
+import { btnViewBill, sumPrice } from "./utils";
+
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
@@ -9,6 +10,12 @@ export const listenerBtn = () => {
       const priceProduct = Number(objective.dataset.price);
       //function
       sumPrice(nameProduct, priceProduct);
+    }
+    if (event.target.className == "result--button") {
+      btnViewBill();
+    }
+    if (event.target.className == "background-footer-aside") {
+      btnViewBill();
     }
   });
 };

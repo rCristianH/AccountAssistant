@@ -1,4 +1,4 @@
-import { btnViewBill } from "../../main";
+
 import { generateJSON, imprimirJSON } from "../../pages/Factura/factura";
 import { footerSelect } from "../../utils/Calls";
 
@@ -17,9 +17,6 @@ export const footer = () => {
   const buttonElement = document.createElement("button");
   buttonElement.className = "result--button"
   buttonElement.textContent = "Mostrar";
-  buttonElement.onclick = function () {
-    btnViewBill();
-  };
   resultDiv.appendChild(buttonElement);
 
   //Boton para tiquet
@@ -53,5 +50,10 @@ export const footer = () => {
     body.classList.toggle("dark");
   };
   footerSelect.appendChild(btnChangeStyle);
+  //elemento de fondo
+  const background = document.createElement("div");
+  background.className = "background-footer-aside";
+  background.style.display = "none";
+  footerSelect.appendChild(background);
 
 };
