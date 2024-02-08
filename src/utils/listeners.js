@@ -26,7 +26,7 @@ export const listenerBtn = () => {
         localStorage.setItem("ThemeMode", "null");
       }
     }
-    if (event.target.className == "generarReciboPost") {
+    if (event.target.classList.contains("generarReciboPost")) {
       imprimirJSON();
     }
   });
