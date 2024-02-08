@@ -5,8 +5,15 @@ import {
   generarReciboAlt,
 } from "../main";
 import { generateTable } from "../pages/Table/GenerateTable";
-
 import { facturaElement, orders } from "./Calls";
+
+export const getLocalStorage = (key) => {
+  let value = localStorage.getItem(key);
+  if (value) {
+    return value;
+  }
+  return null;
+};
 
 export const sumPrice = (nombre, precio) => {
   elementMod.textContent = precio + toNumber();
@@ -68,5 +75,10 @@ export const btnViewBill = () => {
       generarReciboAlt.style.display = "none";
       backgroundFooterAside.style.display = "none";
     }
+  }
+};
+export const darkMode = () => {
+  if (localStorage.getItem("ThemeMode") == "dark") {
+    document.body.classList.add("dark");
   }
 };

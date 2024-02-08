@@ -1,5 +1,5 @@
+import { imprimirJSON } from "../pages/Factura/factura";
 import { btnViewBill, sumPrice } from "./utils";
-
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
@@ -16,6 +16,18 @@ export const listenerBtn = () => {
     }
     if (event.target.className == "background-footer-aside") {
       btnViewBill();
+    }
+    if (event.target.classList.contains("change-style-button")) {
+      if (localStorage.getItem("ThemeMode") == "null") {
+        document.body.classList.add("dark");
+        localStorage.setItem("ThemeMode", "dark");
+      } else if (localStorage.getItem("ThemeMode") == "dark") {
+        document.body.classList.remove("dark");
+        localStorage.setItem("ThemeMode", "null");
+      }
+    }
+    if (event.target.className == "generarReciboPost") {
+      imprimirJSON();
     }
   });
 };

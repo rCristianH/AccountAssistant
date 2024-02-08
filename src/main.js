@@ -1,8 +1,10 @@
 import { footer } from "./templates/footer/Footer";
 import { listenerBtn } from "./utils/listeners";
-import { firstPrintTable } from "./utils/utils";
+import { darkMode, firstPrintTable } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
-
+//Comprueba si el usuario tiene un tema guardado en el local storage
+darkMode()
+//Agrega el footer al final de la pagina
 footer();
 export const elementMod = document.querySelector(".spanResultPrice");
 export const generarRecibo = document.querySelector("#generarRecibo");
