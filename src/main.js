@@ -3,13 +3,15 @@ import { listenerBtn } from "./utils/listeners";
 import { darkMode, firstPrintTable } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
 //Comprueba si el usuario tiene un tema guardado en el local storage
-darkMode()
+darkMode();
 //Agrega el footer al final de la pagina
 footer();
 export const elementMod = document.querySelector(".spanResultPrice");
 export const generarRecibo = document.querySelector("#generarRecibo");
 export const generarReciboAlt = document.querySelector("#generarReciboAlt");
-export const backgroundFooterAside = document.querySelector(".background-footer-aside");
+export const backgroundFooterAside = document.querySelector(
+  ".background-footer-aside"
+);
 writeProducts("arepas", "#unidades");
 writeProducts("paquetes", "#paquetes");
 writeProducts("bebidas", "#bebidas");
@@ -18,7 +20,6 @@ writeProducts("huevos", "#huevos");
 listenerBtn();
 
 firstPrintTable();
-
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

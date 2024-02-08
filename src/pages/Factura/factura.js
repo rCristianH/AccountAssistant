@@ -1,7 +1,6 @@
 import { orders } from "../../utils/Calls";
 import { addClientName } from "../../utils/utils";
 
-
 export const generateJSON = () => {
   const factura = {
     fecha: new Date().toString(),
@@ -13,6 +12,6 @@ export const generateJSON = () => {
   return factura;
 };
 export const imprimirJSON = async () => {
-  const scriptPrint = await import("./printPng.js")
-  scriptPrint.printPng()
+  const scriptPrint = await import("./printPng.js");
+  scriptPrint.printPng();
 };

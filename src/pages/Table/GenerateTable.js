@@ -56,4 +56,3 @@ export function generateTable(orders) {
 
   return html;
 }
-

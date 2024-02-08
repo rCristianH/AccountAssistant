@@ -22,7 +22,7 @@ export const getTime = () => {
 };
 const enCrypt = (numero) => {
   const numeroStr = numero.toString();
-  const digitosArray = numeroStr.split('');
+  const digitosArray = numeroStr.split("");
   // Iterar sobre los dígitos en posición impar y avanzar a la posición par
   for (let i = 0; i < digitosArray.length - 1; i += 2) {
     const temp = digitosArray[i];
@@ -30,17 +30,17 @@ const enCrypt = (numero) => {
     digitosArray[i + 1] = temp;
   }
   // Unir el array en una cadena de texto y retornarla
-  return digitosArray.join('');
+  return digitosArray.join("");
 };
 const deCrypt = (numeroTransformado) => {
-    // Convertir la cadena de texto a un array de dígitos
-    const digitosArray = numeroTransformado.split('');
-    // Iterar sobre los dígitos en posición par y retroceder a la posición impar
-    for (let i = 0; i < digitosArray.length - 1; i += 2) {
-      const temp = digitosArray[i];
-      digitosArray[i] = digitosArray[i + 1];
-      digitosArray[i + 1] = temp;
-    }
-    // Unir el array en una cadena de texto y retornarla
-    return digitosArray.join('');
+  // Convertir la cadena de texto a un array de dígitos
+  const digitosArray = numeroTransformado.split("");
+  // Iterar sobre los dígitos en posición par y retroceder a la posición impar
+  for (let i = 0; i < digitosArray.length - 1; i += 2) {
+    const temp = digitosArray[i];
+    digitosArray[i] = digitosArray[i + 1];
+    digitosArray[i + 1] = temp;
+  }
+  // Unir el array en una cadena de texto y retornarla
+  return digitosArray.join("");
 };

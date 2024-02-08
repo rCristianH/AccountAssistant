@@ -14,4 +14,4 @@ const sendBack = async (factura) => {
     console.error("Error:", error);
   }
 };
-fact
+fact;
