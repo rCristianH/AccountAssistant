@@ -18,13 +18,16 @@ export const listenerBtn = () => {
       btnViewBill();
     }
     if (event.target.classList.contains("change-style-button")) {
-      if (localStorage.getItem("ThemeMode") == "null") {
+      if (localStorage.getItem("ThemeMode") == null) {
+        console.log("cambio de tema null")
         document.body.classList.add("dark");
         localStorage.setItem("ThemeMode", "dark");
       } else if (localStorage.getItem("ThemeMode") == "dark") {
+        console.log("cambio de tema dark")
         document.body.classList.remove("dark");
         localStorage.setItem("ThemeMode", "null");
       }
+      console.log("cambio de tema")
     }
     if (event.target.classList.contains("generarReciboPost")) {
       imprimirJSON();

@@ -24,8 +24,8 @@ export const productos = {
     { shortName: "Vaso", name: "Vaso", price: 300 },
   ],
   huevos: [
-    { shortName: "Huevos", name: "Huevos", price: 2500 },
-    { shortName: "Huevo", name: "Huevo", price: 1300 },
+    { shortName: "Huevos", name: "Huevos", price: 2300 },
+    { shortName: "Huevo", name: "Huevo", price: 1900 },
     { shortName: "Pericos", name: "Pericos", price: 3500 },
     {
       input: "input",
