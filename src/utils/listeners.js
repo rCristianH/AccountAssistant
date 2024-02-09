@@ -18,16 +18,17 @@ export const listenerBtn = () => {
       btnViewBill();
     }
     if (event.target.classList.contains("change-style-button")) {
-      if (localStorage.getItem("ThemeMode") == null) {
-        console.log("cambio de tema null")
-        document.body.classList.add("dark");
-        localStorage.setItem("ThemeMode", "dark");
-      } else if (localStorage.getItem("ThemeMode") == "dark") {
-        console.log("cambio de tema dark")
-        document.body.classList.remove("dark");
-        localStorage.setItem("ThemeMode", "null");
+      const nameLS = "ThemeMode"
+      const getLS = localStorage.getItem(nameLS);
+      const callbody = document.body.classList;
+    
+      if (getLS == "null" || getLS == null){
+        callbody.add("dark");
+        localStorage.setItem(nameLS, "dark");
+      } else if (getLS == "dark") {
+        callbody.remove("dark");
+        localStorage.setItem(nameLS, null);
       }
-      console.log("cambio de tema")
     }
     if (event.target.classList.contains("generarReciboPost")) {
       imprimirJSON();
