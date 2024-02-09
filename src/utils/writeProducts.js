@@ -1,5 +1,4 @@
 import { productos } from "./Products";
-import { sumPrice } from "./utils";
 
 const createProducts = (type) => {
   const nodes = [];
@@ -15,11 +14,8 @@ const createProducts = (type) => {
       productInput.className = e.inputClass;
       productInfo.appendChild(productInput);
       const addButton = document.createElement("button");
-      addButton.className = "product-card--button-text";
+      addButton.className = `product-card--button-text product-card--button-text${e.inputClass}`;
       addButton.textContent = ">";
-      addButton.onclick = function () {
-        e.inputFunction();
-      };
       productCard.appendChild(productInfo);
       productCard.appendChild(addButton);
       nodes.push(productCard);
@@ -30,7 +26,7 @@ const createProducts = (type) => {
       const productInfo = document.createElement("div");
       productInfo.className = "product-info";
       productInfo.innerHTML = `<p class="product-info--p--name">${e.shortName}</p><p class="product-info--p--price">${e.price}</p>`;
-      // Crear el botón con el evento onclick
+
       const addButton = document.createElement("button");
       addButton.className = "product-card--button";
       addButton.textContent = "+";

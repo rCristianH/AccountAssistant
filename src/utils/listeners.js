@@ -1,5 +1,5 @@
 import { imprimirJSON } from "../pages/Factura/factura";
-import { btnViewBill, sumPrice } from "./utils";
+import { addClientName, btnViewBill, sumOtherPrice, sumPrice } from "./utils";
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
@@ -11,6 +11,16 @@ export const listenerBtn = () => {
       //function
       sumPrice(nameProduct, priceProduct);
     }
+    if (
+      event.target.classList.contains("product-card--button-textname-input")
+    ) {
+      addClientName();
+    }
+    if (
+      event.target.classList.contains("product-card--button-textnumber-input")
+    ) {
+      sumOtherPrice();
+    }
     if (event.target.className == "result--button") {
       btnViewBill();
     }
@@ -18,11 +28,11 @@ export const listenerBtn = () => {
       btnViewBill();
     }
     if (event.target.classList.contains("change-style-button")) {
-      const nameLS = "ThemeMode"
+      const nameLS = "ThemeMode";
       const getLS = localStorage.getItem(nameLS);
       const callbody = document.body.classList;
-    
-      if (getLS == "null" || getLS == null){
+
+      if (getLS == "null" || getLS == null) {
         callbody.add("dark");
         localStorage.setItem(nameLS, "dark");
       } else if (getLS == "dark") {
