@@ -1,8 +1,9 @@
 import { footer } from "./templates/footer/Footer";
 import { listenerBtn } from "./utils/listeners";
-import { darkMode, firstPrintTable } from "./utils/utils";
+import { darkMode, firstPrintTable, getOrdersLS, nameClient } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
 //Comprueba si el usuario tiene un tema guardado en el local storage
+getOrdersLS();
 darkMode();
 //Agrega el footer al final de la pagina
 footer();

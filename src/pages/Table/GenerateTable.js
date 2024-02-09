@@ -1,4 +1,4 @@
-import { addClientName } from "../../utils/utils";
+import { nameClient } from "../../utils/utils";
 
 export function generateTable(orders) {
   const productos = {}; // Objeto para acumular cantidades y totales por producto
@@ -14,7 +14,8 @@ export function generateTable(orders) {
   });
 
   // Crear el encabezado de la tabla
-  let optClient = addClientName() == "" ? "Cliente General" : addClientName();
+  const consulta = nameClient == "" || nameClient == undefined 
+  let optClient = consulta ? "Cliente General" : nameClient;
   let html = `
   <div class="client-name">Cliente: <span class="client-name--span">${optClient}</span></div>
     <table class="factura--table">

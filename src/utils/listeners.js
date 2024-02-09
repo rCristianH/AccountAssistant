@@ -21,17 +21,24 @@ export const listenerBtn = () => {
     ) {
       sumOtherPrice();
     }
+    if (event.target.className == "nav--header--img") {
+      localStorage.setItem("Orders", "null");
+      localStorage.setItem("NameClient", "null");
+    }
     if (event.target.className == "result--button") {
       btnViewBill();
     }
     if (event.target.className == "background-footer-aside") {
       btnViewBill();
     }
+    if (event.target.classList.contains("generarReciboPost")) {
+      imprimirJSON();
+    }
     if (event.target.classList.contains("change-style-button")) {
       const nameLS = "ThemeMode";
       const getLS = localStorage.getItem(nameLS);
       const callbody = document.body.classList;
-
+  
       if (getLS == "null" || getLS == null) {
         callbody.add("dark");
         localStorage.setItem(nameLS, "dark");
@@ -39,9 +46,6 @@ export const listenerBtn = () => {
         callbody.remove("dark");
         localStorage.setItem(nameLS, null);
       }
-    }
-    if (event.target.classList.contains("generarReciboPost")) {
-      imprimirJSON();
     }
   });
 };

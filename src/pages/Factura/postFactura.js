@@ -1,5 +1,5 @@
 const sendBack = async (factura) => {
-  try {
+  /* try {
     const response = await fetch("url/guardar-json", {
       method: "POST",
       headers: {
@@ -9,9 +9,8 @@ const sendBack = async (factura) => {
     });
 
     const data = await response.text();
-    console.log(data);
+    
   } catch (error) {
     console.error("Error:", error);
-  }
+  } */
 };
-fact;

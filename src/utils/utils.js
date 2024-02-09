@@ -6,6 +6,7 @@ import {
 } from "../main";
 import { generateTable } from "../pages/Table/GenerateTable";
 import { facturaElement, orders } from "./Calls";
+export let nameClient;
 
 export const getLocalStorage = (key) => {
   let value = localStorage.getItem(key);
@@ -18,17 +19,21 @@ export const getLocalStorage = (key) => {
 export const sumPrice = (nombre, precio) => {
   elementMod.textContent = precio + toNumber();
   orders.push({ nombre: nombre, precio: precio });
+  localStorage.setItem("Orders", JSON.stringify(orders));
   updatePage();
 };
 export const sumOtherPrice = () => {
   let value = Number(document.getElementsByClassName("number-input")[0].value);
   elementMod.textContent = value + toNumber();
   orders.push({ nombre: "Otro valor", precio: value });
+  localStorage.setItem("Orders", JSON.stringify(orders));
   updatePage();
 };
 export const addClientName = () => {
   let value = String(document.getElementsByClassName("name-input")[0].value);
-  return value;
+  nameClient = value;
+  localStorage.setItem("NameClient", nameClient);
+  updatePage();
 };
 export const updatePage = () => {
   facturaElement.innerHTML = generateTable(orders);
@@ -47,6 +52,7 @@ export function displaySection(section) {
 }
 export const firstPrintTable = () => {
   //inserta los datos del header de la tabla
+  getOrdersLS();
   facturaElement.innerHTML = generateTable(orders);
   let windowWidth =
     window.innerWidth ||
@@ -80,5 +86,18 @@ export const btnViewBill = () => {
 export const darkMode = () => {
   if (localStorage.getItem("ThemeMode") == "dark") {
     document.body.classList.add("dark");
+  }
+};
+export const getOrdersLS = () => {
+  const consulta = localStorage.getItem("Orders");
+  if (consulta !== "null" && consulta !== null) {
+    const parsedOrders = JSON.parse(consulta);
+    orders.length = 0; // Vacía el array
+    parsedOrders.forEach((item) => orders.push(item));
+    updatePage();
+  }
+  const consultaName = localStorage.getItem("NameClient");
+  if(consultaName !== "null" && consultaName !== null){
+    nameClient = consultaName;
   }
 };
