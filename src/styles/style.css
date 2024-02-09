@@ -109,6 +109,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
   gap: 26px;
+  padding-bottom: 100px;
   place-content: center;
 }
 .product-card {
@@ -219,7 +220,6 @@ footer {
   width: 100%;
 }
 .result {
-  position: absolute;
   bottom: 10px;
   right: 10px;
   width: 200px;
@@ -229,6 +229,9 @@ footer {
   background-color: var(--on-secondary);
   justify-content: space-around;
   border-radius: 20px;
+}
+.result,.generar{
+  position: fixed;
 }
 .result--p {
   font-size: var(--md);
@@ -252,12 +255,12 @@ footer {
 }
 #generarRecibo {
   width: 100px;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
 }
 #generarReciboAlt {
   width: 100px;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   margin-left: 120px;
 }
@@ -272,7 +275,7 @@ footer {
   display: none;
 }
 .change-style-button{
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   width: 50px;
