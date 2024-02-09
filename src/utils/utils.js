@@ -19,7 +19,7 @@ export const getLocalStorage = (key) => {
 export const sumPrice = (nombre, precio) => {
   elementMod.textContent = precio + toNumber();
   console.log(elementMod.textContent);
-  localStorage.setItem("ActualPrice",elementMod.textContent);
+  localStorage.setItem("ActualPrice", elementMod.textContent);
   orders.push({ nombre: nombre, precio: precio });
   localStorage.setItem("Orders", JSON.stringify(orders));
   updatePage();
@@ -97,14 +97,16 @@ export const getOrdersLS = () => {
     const parsedOrders = JSON.parse(consulta);
     orders.length = 0; // Vacía el array
     parsedOrders.forEach((item) => orders.push(item));
-    nameClient = consultaName;
-    updatePage();
   }
+  if (consultaName !== "null" && consultaName !== null) {
+    nameClient = consultaName;
+  }
+  updatePage();
 };
+
 export const getTotalPrice = () => {
   const consulta = localStorage.getItem("ActualPrice");
   if (consulta !== "null" && consulta !== null) {
     elementMod.textContent = consulta;
   }
-}
-
+};
