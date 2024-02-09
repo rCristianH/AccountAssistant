@@ -54,6 +54,7 @@ export function generateTable(orders) {
       </tfoot>
     </table>
   `;
+  
 
   return html;
 }

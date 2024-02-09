@@ -1,6 +1,6 @@
 import { footer } from "./templates/footer/Footer";
 import { listenerBtn } from "./utils/listeners";
-import { darkMode, firstPrintTable, getOrdersLS, nameClient } from "./utils/utils";
+import { darkMode, firstPrintTable, getOrdersLS, getTotalPrice, nameClient } from "./utils/utils";
 import { writeProducts } from "./utils/writeProducts";
 //Comprueba si el usuario tiene un tema guardado en el local storage
 getOrdersLS();
@@ -13,6 +13,8 @@ export const generarReciboAlt = document.querySelector("#generarReciboAlt");
 export const backgroundFooterAside = document.querySelector(
   ".background-footer-aside"
 );
+//requiere que element mod sea declarado antes
+getTotalPrice();
 writeProducts("arepas", "#unidades");
 writeProducts("paquetes", "#paquetes");
 writeProducts("bebidas", "#bebidas");

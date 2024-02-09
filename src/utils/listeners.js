@@ -24,6 +24,7 @@ export const listenerBtn = () => {
     if (event.target.className == "nav--header--img") {
       localStorage.setItem("Orders", "null");
       localStorage.setItem("NameClient", "null");
+      localStorage.setItem("ActualPrice", "null");
     }
     if (event.target.className == "result--button") {
       btnViewBill();
