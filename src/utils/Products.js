@@ -1,32 +1,18 @@
-//agrega la varibale data al localsotrage para que no se pierda al recargar la pagina
-
-const isOnline = () => {
-  if (navigator.onLine) {
-    return true;
-  } else {
-    return false;
-  }
-}
 const GetStock = () => {
-  const getDATALS = localStorage.getItem("data");
-  const dataLsParse = JSON.parse(localStorage.getItem("data"));
+  const dataInLs = localStorage.getItem("data");
 
-  //aniade un condicional para si es GetProducts is not defined
-  if (isOnline==false) {
-    return JSON.parse(localStorage.getItem("data"));
-  }
-  if (!getDATALS || getDATALS == 'null') {
-    localStorage.setItem("data", JSON.stringify(GetProducts.data));
-    return JSON.parse(localStorage.getItem("data"));
-  } else if (getDATALS.length > 4) {
-    if (getDATALS != JSON.stringify(GetProducts.data)) {
-      localStorage.setItem("data", JSON.stringify(GetProducts.data));
-      return JSON.parse(localStorage.getItem("data"));
-    } else {
-      return dataLsParse;
+  //Verifica si puede obtener los productos sino retorna los productos del localstorage
+  try {
+    GetProduts;
+  } catch (error) {
+    if (dataInLs === null) {
+      console.log("Error al cargar los productos: ", {error});
     }
+    return JSON.parse(dataInLs);
   }
+  //Una vez verificado que puede obtener los productos los guarda
+  localStorage.setItem("data", JSON.stringify(GetProducts.data));
+  return GetProducts.data;
 };
 
 export let productos = GetStock();
-

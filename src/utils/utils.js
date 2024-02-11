@@ -103,7 +103,24 @@ export const getOrdersLS = () => {
   }
   updatePage();
 };
-
+export const generateErrorModal = (type,error,res) => {
+  const errorContainer = document.createElement("div");
+  errorContainer.classList.add("error--container");
+  const errorContainerType = document.createElement("h2");
+  errorContainerType.classList.add("error--type");
+  errorContainerType.textContent = type;
+  const errorContainerMsg = document.createElement("p");
+  errorContainerMsg.classList.add("error--msg");
+  errorContainerMsg.textContent = error.stack;
+  const errorContainerRes = document.createElement("p");
+  errorContainerRes.classList.add("error--res");
+  errorContainerRes.textContent = res;
+  
+  errorContainer.appendChild(errorContainerType);
+  errorContainer.appendChild(errorContainerMsg);
+  errorContainer.appendChild(errorContainerRes);
+  document.body.appendChild(errorContainer);
+}
 export const getTotalPrice = () => {
   const consulta = localStorage.getItem("ActualPrice");
   if (consulta !== "null" && consulta !== null) {
