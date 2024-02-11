@@ -103,24 +103,34 @@ export const getOrdersLS = () => {
   }
   updatePage();
 };
-export const generateErrorModal = (type,error,res) => {
+export const generateErrorModal = (type, error, res) => {
+  const windowError = document.createElement("div");
+  windowError.classList.add("error--window");
   const errorContainer = document.createElement("div");
   errorContainer.classList.add("error--container");
   const errorContainerType = document.createElement("h2");
-  errorContainerType.classList.add("error--type");
+  errorContainerType.classList.add("error--container--type");
   errorContainerType.textContent = type;
   const errorContainerMsg = document.createElement("p");
-  errorContainerMsg.classList.add("error--msg");
-  errorContainerMsg.textContent = error.stack;
+  errorContainerMsg.classList.add("error--container--msg");
+  errorContainerMsg.textContent = error.message;
   const errorContainerRes = document.createElement("p");
-  errorContainerRes.classList.add("error--res");
+  errorContainerRes.classList.add("error--container--res");
   errorContainerRes.textContent = res;
-  
+  const button = document.createElement("button");
+  button.textContent = "⟳";
+  button.classList.add("error--container--button");
+  button.addEventListener("click", () => {
+    location.reload();
+  });
+
   errorContainer.appendChild(errorContainerType);
   errorContainer.appendChild(errorContainerMsg);
   errorContainer.appendChild(errorContainerRes);
-  document.body.appendChild(errorContainer);
-}
+  errorContainer.appendChild(button);
+  windowError.appendChild(errorContainer);
+  document.body.appendChild(windowError);
+};
 export const getTotalPrice = () => {
   const consulta = localStorage.getItem("ActualPrice");
   if (consulta !== "null" && consulta !== null) {

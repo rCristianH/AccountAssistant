@@ -1,12 +1,18 @@
+import { generateErrorModal } from "./utils";
+
 const GetStock = () => {
   const dataInLs = localStorage.getItem("data");
 
   //Verifica si puede obtener los productos sino retorna los productos del localstorage
   try {
-    GetProduts;
+    GetProducts;
   } catch (error) {
     if (dataInLs === null) {
-      console.log("Error al cargar los productos: ", {error});
+      generateErrorModal(
+        "Error 404",
+        error,
+        "Verifique su conexión a internet o revise su archivo de productos."
+      );
     }
     return JSON.parse(dataInLs);
   }
