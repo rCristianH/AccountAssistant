@@ -90,6 +90,7 @@ export default defineConfig({
             url: "https://rcristianh.github.io/api-rest-moviedb/",
           },
         ],
+        version: "2.0.3",
       },
     }),
   ],
