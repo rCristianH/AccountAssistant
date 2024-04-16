@@ -9,6 +9,7 @@
     "preview": "vite preview --host",
     "pretest:cygui": "npm run dev &",
     "test:cygui": "cypress open",
+    "pretest:cycli": "npm run dev &",
     "test:cycli": "cypress run",
     "serve": "serve ./dist",
     "predeploy": "vite build",
