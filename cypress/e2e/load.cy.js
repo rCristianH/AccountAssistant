@@ -3,7 +3,7 @@ describe('Load the web site', () => {
     cy.visit("localhost:5173")
       
   })
-  it("Reload to page",()=>{
-    cy.reload()
+  it("Get elements",()=>{
+    cy.get('.product-card')
   })
 });
