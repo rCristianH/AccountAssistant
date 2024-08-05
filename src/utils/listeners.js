@@ -1,11 +1,20 @@
-import { imprimirJSON } from "../pages/Factura/factura";
-import { orders } from "./Calls";
-import { addClientName, btnViewBill, firstPrintTable, getOrdersLS, sumOtherPrice, sumPrice, updatePage } from "./utils";
+import { imprimirJSON } from '../pages/Factura/factura';
+import { orders } from './Calls';
+import {
+  addClientName,
+  btnViewBill,
+  firstPrintTable,
+  getOrdersLS,
+  resetFactura,
+  sumOtherPrice,
+  sumPrice,
+  updatePage,
+} from './utils';
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
-  document.body.addEventListener("click", (event) => {
-    if (event.target.className == "product-card--button") {
+  document.body.addEventListener('click', (event) => {
+    if (event.target.className == 'product-card--button') {
       const objective = event.target;
       const nameProduct = objective.dataset.name;
       const priceProduct = Number(objective.dataset.price);
@@ -13,44 +22,38 @@ export const listenerBtn = () => {
       sumPrice(nameProduct, priceProduct);
     }
     if (
-      event.target.classList.contains("product-card--button-textname-input")
+      event.target.classList.contains('product-card--button-textname-input')
     ) {
       addClientName();
-      document.querySelector(".name-input").value = ""
+      document.querySelector('.name-input').value = '';
     }
     if (
-      event.target.classList.contains("product-card--button-textnumber-input")
+      event.target.classList.contains('product-card--button-textnumber-input')
     ) {
       sumOtherPrice();
     }
-    if (event.target.className == "nav--header--img") {
-      localStorage.setItem("Orders", "null");
-      localStorage.setItem("NameClient", "null");
-      localStorage.setItem("ActualPrice", "null");
-      orders.splice(0, orders.length);
-      document.querySelector(".product-card--button-textname-input").click()
-      document.querySelector(".spanResultPrice").textContent = "0"
-      getOrdersLS()
+    if (event.target.className == 'nav--header--img') {
+      resetFactura();
     }
-    if (event.target.className == "result--button") {
+    if (event.target.className == 'result--button') {
       btnViewBill();
     }
-    if (event.target.className == "background-footer-aside") {
+    if (event.target.className == 'background-footer-aside') {
       btnViewBill();
     }
-    if (event.target.classList.contains("generarReciboPost")) {
+    if (event.target.classList.contains('generarReciboPost')) {
       imprimirJSON();
     }
-    if (event.target.classList.contains("change-style-button")) {
-      const nameLS = "ThemeMode";
+    if (event.target.classList.contains('change-style-button')) {
+      const nameLS = 'ThemeMode';
       const getLS = localStorage.getItem(nameLS);
       const callbody = document.body.classList;
-  
-      if (getLS == "null" || getLS == null) {
-        callbody.add("dark");
-        localStorage.setItem(nameLS, "dark");
-      } else if (getLS == "dark") {
-        callbody.remove("dark");
+
+      if (getLS == 'null' || getLS == null) {
+        callbody.add('dark');
+        localStorage.setItem(nameLS, 'dark');
+      } else if (getLS == 'dark') {
+        callbody.remove('dark');
         localStorage.setItem(nameLS, null);
       }
     }
