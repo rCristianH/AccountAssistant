@@ -1,5 +1,6 @@
 import { imprimirJSON } from "../pages/Factura/factura";
-import { addClientName, btnViewBill, sumOtherPrice, sumPrice } from "./utils";
+import { orders } from "./Calls";
+import { addClientName, btnViewBill, firstPrintTable, getOrdersLS, sumOtherPrice, sumPrice, updatePage } from "./utils";
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
@@ -15,6 +16,7 @@ export const listenerBtn = () => {
       event.target.classList.contains("product-card--button-textname-input")
     ) {
       addClientName();
+      document.querySelector(".name-input").value = ""
     }
     if (
       event.target.classList.contains("product-card--button-textnumber-input")
@@ -25,6 +27,10 @@ export const listenerBtn = () => {
       localStorage.setItem("Orders", "null");
       localStorage.setItem("NameClient", "null");
       localStorage.setItem("ActualPrice", "null");
+      orders.splice(0, orders.length);
+      document.querySelector(".product-card--button-textname-input").click()
+      document.querySelector(".spanResultPrice").textContent = "0"
+      getOrdersLS()
     }
     if (event.target.className == "result--button") {
       btnViewBill();
