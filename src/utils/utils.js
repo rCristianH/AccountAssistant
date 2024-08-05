@@ -142,6 +142,7 @@ export const resetFactura = () => {
   localStorage.setItem('NameClient', 'null');
   localStorage.setItem('ActualPrice', 'null');
   orders.splice(0, orders.length);
+  document.querySelector(".nav--unidades").click()
   document.querySelector('.product-card--button-textname-input').click();
   document.querySelector('.spanResultPrice').textContent = '0';
   const container = document.querySelector('.cards-container');
