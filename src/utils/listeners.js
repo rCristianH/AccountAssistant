@@ -1,18 +1,17 @@
 import { imprimirJSON } from '../pages/Factura/factura';
-import { orders } from './Calls';
 import {
   addClientName,
+  addIpUrl,
   btnViewBill,
-  firstPrintTable,
-  getOrdersLS,
+  ip_url,
   resetFactura,
   sumOtherPrice,
   sumPrice,
-  updatePage,
 } from './utils';
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
+
   document.body.addEventListener('click', (event) => {
     if (event.target.className == 'product-card--button') {
       const objective = event.target;
@@ -56,6 +55,9 @@ export const listenerBtn = () => {
         callbody.remove('dark');
         localStorage.setItem(nameLS, null);
       }
+    }
+    if (event.target.classList.contains('product-card--button-textip-input')) {
+      addIpUrl()
     }
   });
 };

@@ -1,7 +1,7 @@
 import { header } from '/src/templates/header/Header';
 header();
+
 const image = document.querySelector('.nav--header--img');
-console.log(image);
 
 const boolFunction = async (url) => {
   try {

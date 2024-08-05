@@ -7,6 +7,7 @@ import {
 import { generateTable } from '../pages/Table/GenerateTable';
 import { facturaElement, orders } from './Calls';
 export let nameClient;
+export let ip_url;
 
 export const getLocalStorage = (key) => {
   let value = localStorage.getItem(key);
@@ -18,7 +19,6 @@ export const getLocalStorage = (key) => {
 
 export const sumPrice = (nombre, precio) => {
   elementMod.textContent = precio + toNumber();
-  console.log(elementMod.textContent);
   localStorage.setItem('ActualPrice', elementMod.textContent);
   orders.push({ nombre: nombre, precio: precio });
   localStorage.setItem('Orders', JSON.stringify(orders));
@@ -36,6 +36,12 @@ export const addClientName = () => {
   nameClient = value;
   localStorage.setItem('NameClient', nameClient);
   updatePage();
+};
+export const addIpUrl = () => {
+  let ip = document.querySelector('.ip-input');
+  ip_url = ip.value;
+  localStorage.setItem('IpURL', ip_url);
+  ip.value = ""
 };
 export const updatePage = () => {
   facturaElement.innerHTML = generateTable(orders);
@@ -142,7 +148,7 @@ export const resetFactura = () => {
   localStorage.setItem('NameClient', 'null');
   localStorage.setItem('ActualPrice', 'null');
   orders.splice(0, orders.length);
-  document.querySelector(".nav--unidades").click()
+  document.querySelector('.nav--unidades').click();
   document.querySelector('.product-card--button-textname-input').click();
   document.querySelector('.spanResultPrice').textContent = '0';
   const container = document.querySelector('.cards-container');
