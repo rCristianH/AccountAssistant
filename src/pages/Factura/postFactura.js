@@ -11,7 +11,7 @@ export const sendBack = async (factura) => {
   }
   url = ipurl;
   try {
-    const response = await fetch(`http://${url}/guardar-json`, {
+    const response = await fetch(`https://${url}/guardar-json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
