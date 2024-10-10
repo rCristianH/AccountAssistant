@@ -16,7 +16,7 @@ export default defineConfig({
         protocol_handlers: [{ protocol: "mailto", url: "/newEmail?to=%s" }],
         display_override: ["window-controls-overlay"],
         name: "El Arepero Mayor",
-        short_name: "ELAM",
+        short_name: "AM",
         start_url: "./index.html",
         display: "standalone",
         description:
