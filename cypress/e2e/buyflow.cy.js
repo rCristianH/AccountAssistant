@@ -9,7 +9,7 @@ describe('Emulate a buy flow', () => {
     // Definimos una función para procesar la selección de productos
     const process = (i) => {
       // Seleccionamos el botón de producto correspondiente
-      cy.get('.product-card--button')
+      cy.get('.product-card--button--1')
         .eq(i)
         .click()
         // Después de hacer clic, obtenemos el precio del producto y lo sumamos al total
