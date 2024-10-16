@@ -11,15 +11,33 @@ import {
 
 //evento para escuchar el click de los botones de agregar un producto
 export const listenerBtn = () => {
-
   document.body.addEventListener('click', (event) => {
-    if (event.target.className == 'product-card--button') {
+    if (event.target.classList.contains('product-card--button--1')) {
+      const objective = event.target;
+      const nameProduct = objective.dataset.name;
+      const priceProduct = Number(objective.dataset.price);
+
+      //function
+      sumPrice(nameProduct, priceProduct);
+    } else if (event.target.classList.contains('product-card--button--2')) {
       const objective = event.target;
       const nameProduct = objective.dataset.name;
       const priceProduct = Number(objective.dataset.price);
       //function
       sumPrice(nameProduct, priceProduct);
+      sumPrice(nameProduct, priceProduct);
+    } else if (event.target.classList.contains('product-card--button--5')) {
+      const objective = event.target;
+      const nameProduct = objective.dataset.name;
+      const priceProduct = Number(objective.dataset.price);
+      //function
+      sumPrice(nameProduct, priceProduct);
+      sumPrice(nameProduct, priceProduct);
+      sumPrice(nameProduct, priceProduct);
+      sumPrice(nameProduct, priceProduct);
+      sumPrice(nameProduct, priceProduct);
     }
+
     if (
       event.target.classList.contains('product-card--button-textname-input')
     ) {
@@ -57,7 +75,7 @@ export const listenerBtn = () => {
       }
     }
     if (event.target.classList.contains('product-card--button-textip-input')) {
-      addIpUrl()
+      addIpUrl();
     }
   });
 };
